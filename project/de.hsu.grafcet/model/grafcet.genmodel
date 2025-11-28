@@ -110,6 +110,9 @@
     <genClasses ecoreClass="grafcet.ecore#//Condition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference grafcet.ecore#//Condition/term"/>
     </genClasses>
+    <genClasses ecoreClass="grafcet.ecore#//HighlightableType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute grafcet.ecore#//HighlightableType/highlight"/>
+    </genClasses>
   </genPackages>
   <genPackages prefix="Terms" ecorePackage="terms.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="terms.ecore#//VariableDeclarationType">
@@ -130,6 +133,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute terms.ecore#//VariableDeclaration/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute terms.ecore#//VariableDeclaration/variableDeclarationType"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference terms.ecore#//VariableDeclaration/step"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute terms.ecore#//VariableDeclaration/value"/>
     </genClasses>
     <genClasses image="false" ecoreClass="terms.ecore#//Operator">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference terms.ecore#//Operator/subterm"/>

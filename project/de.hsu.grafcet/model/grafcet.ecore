@@ -58,7 +58,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="partialGrafcets" lowerBound="1"
         upperBound="-1" eType="#//PartialGrafcet"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Step" eSuperTypes="#//InitializableType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Step" eSuperTypes="#//InitializableType #//HighlightableType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//Node #//TimeCondition"/>
   <eClassifiers xsi:type="ecore:EClass" name="Synchronization" eSuperTypes="#//Node"/>
   <eClassifiers xsi:type="ecore:EClass" name="Macrostep" eSuperTypes="#//Node">
@@ -166,5 +166,9 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="term" eType="ecore:EClass terms.ecore#//Term"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HighlightableType" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="highlight" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
 </ecore:EPackage>

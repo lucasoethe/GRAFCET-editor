@@ -6,12 +6,26 @@
       <metamodel href="platform:/plugin/de.hsu.grafcet/model/terms.ecore#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="StepNode" semanticCandidatesExpression="feature:steps" domainClass="grafcet::Step">
-          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql: if self.activationLink then '* ' + self.id else self.id endif" sizeComputationExpression="5" labelPosition="node" workspacePath="/de.hsu.grafcet.design/icons_svg/Step.svg">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          </style>
-          <conditionnalStyles predicateExpression="aql:self.initial">
+          <conditionnalStyles predicateExpression="aql: if self.initial then if self.highlight then false else true endif else false endif ">
             <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql: if self.activationLink then '* ' + self.id else self.id endif" sizeComputationExpression="5" labelPosition="node" workspacePath="/de.hsu.grafcet.design/icons_svg/StepInitial.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql: if self.initial then self.highlight else false endif">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql: if self.activationLink then '* ' + self.id else self.id endif" sizeComputationExpression="5" labelPosition="node" workspacePath="/de.hsu.grafcet.design/icons_svg/StepInitialHighlight.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql: if self.initial then false else self.highlight endif">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql: if self.activationLink then '* ' + self.id else self.id endif" sizeComputationExpression="5" labelPosition="node" workspacePath="/de.hsu.grafcet.design/icons_svg/StepHighlight.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql: if self.initial then false else if self.highlight then false else true endif endif">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql: if self.activationLink then '* ' + self.id else self.id endif" sizeComputationExpression="5" labelPosition="node" workspacePath="/de.hsu.grafcet.design/icons_svg/Step.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
@@ -127,7 +141,7 @@
         </containerMappings>
         <containerMappings name="DeclarationsContainer" semanticCandidatesExpression="feature:variableDeclarationContainer" domainClass="grafcet::VariableDeclarationContainer" childrenPresentation="List">
           <subNodeMappings name="VariableDeclarationNode" semanticCandidatesExpression="feature:variableDeclarations" domainClass="terms::VariableDeclaration">
-            <style xsi:type="style:BundledImageDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:BundledImageDescription" labelSize="12" showIcon="false" labelExpression="aql: self.name + ' = ' + self.value" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
