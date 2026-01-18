@@ -177,6 +177,11 @@ public class GrafcetAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseHighlightableType(HighlightableType object) {
+			return createHighlightableTypeAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -500,6 +505,20 @@ public class GrafcetAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConditionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.hsu.grafcet.HighlightableType <em>Highlightable Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.hsu.grafcet.HighlightableType
+	 * @generated
+	 */
+	public Adapter createHighlightableTypeAdapter() {
 		return null;
 	}
 

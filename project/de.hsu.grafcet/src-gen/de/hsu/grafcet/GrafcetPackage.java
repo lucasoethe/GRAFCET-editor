@@ -5,7 +5,6 @@ package de.hsu.grafcet;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -23,7 +22,8 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see de.hsu.grafcet.GrafcetFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore"
+ *        annotation="http://www.eclipse.org/OCL/Import ecore='http://www.eclipse.org/emf/2002/Ecore' terms='terms.ecore#/'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
  * @generated
  */
 public interface GrafcetPackage extends EPackage {
@@ -671,13 +671,22 @@ public interface GrafcetPackage extends EPackage {
 	int STEP__ACTIVATION_LINK = INITIALIZABLE_TYPE__ACTIVATION_LINK;
 
 	/**
+	 * The feature id for the '<em><b>Highlight</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STEP__HIGHLIGHT = INITIALIZABLE_TYPE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Step</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STEP_FEATURE_COUNT = INITIALIZABLE_TYPE_FEATURE_COUNT + 0;
+	int STEP_FEATURE_COUNT = INITIALIZABLE_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Step</em>' class.
@@ -762,31 +771,13 @@ public interface GrafcetPackage extends EPackage {
 	int TRANSITION_FEATURE_COUNT = NODE_FEATURE_COUNT + 5;
 
 	/**
-	 * The operation id for the '<em>Condition Term Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION___CONDITION_TERM_TYPE__DIAGNOSTICCHAIN_MAP = NODE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Condition Variable Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION___CONDITION_VARIABLE_TYPE__DIAGNOSTICCHAIN_MAP = NODE_OPERATION_COUNT + 1;
-
-	/**
 	 * The number of operations of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_OPERATION_COUNT = NODE_OPERATION_COUNT + 2;
+	int TRANSITION_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.hsu.grafcet.impl.SynchronizationImpl <em>Synchronization</em>}' class.
@@ -1130,22 +1121,13 @@ public interface GrafcetPackage extends EPackage {
 	int ACTION_FEATURE_COUNT = ACTION_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Action Output Variable Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION___ACTION_OUTPUT_VARIABLE_TYPE__DIAGNOSTICCHAIN_MAP = ACTION_TYPE_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_OPERATION_COUNT = ACTION_TYPE_OPERATION_COUNT + 1;
+	int ACTION_OPERATION_COUNT = ACTION_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.hsu.grafcet.impl.StoredActionImpl <em>Stored Action</em>}' class.
@@ -1212,58 +1194,13 @@ public interface GrafcetPackage extends EPackage {
 	int STORED_ACTION_FEATURE_COUNT = ACTION_FEATURE_COUNT + 3;
 
 	/**
-	 * The operation id for the '<em>Action Output Variable Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STORED_ACTION___ACTION_OUTPUT_VARIABLE_TYPE__DIAGNOSTICCHAIN_MAP = ACTION___ACTION_OUTPUT_VARIABLE_TYPE__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Condition Term Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STORED_ACTION___CONDITION_TERM_TYPE__DIAGNOSTICCHAIN_MAP = ACTION_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Condition Variable Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STORED_ACTION___CONDITION_VARIABLE_TYPE__DIAGNOSTICCHAIN_MAP = ACTION_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Stored Action Cond Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STORED_ACTION___STORED_ACTION_COND_TYPE__DIAGNOSTICCHAIN_MAP = ACTION_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Stored Action Var Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STORED_ACTION___STORED_ACTION_VAR_TYPE__DIAGNOSTICCHAIN_MAP = ACTION_OPERATION_COUNT + 3;
-
-	/**
 	 * The number of operations of the '<em>Stored Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STORED_ACTION_OPERATION_COUNT = ACTION_OPERATION_COUNT + 4;
+	int STORED_ACTION_OPERATION_COUNT = ACTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.hsu.grafcet.impl.ContinuousActionImpl <em>Continuous Action</em>}' class.
@@ -1357,58 +1294,13 @@ public interface GrafcetPackage extends EPackage {
 	int CONTINUOUS_ACTION_FEATURE_COUNT = ACTION_FEATURE_COUNT + 6;
 
 	/**
-	 * The operation id for the '<em>Action Output Variable Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_ACTION___ACTION_OUTPUT_VARIABLE_TYPE__DIAGNOSTICCHAIN_MAP = ACTION___ACTION_OUTPUT_VARIABLE_TYPE__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Condition Term Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_ACTION___CONDITION_TERM_TYPE__DIAGNOSTICCHAIN_MAP = ACTION_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Condition Variable Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_ACTION___CONDITION_VARIABLE_TYPE__DIAGNOSTICCHAIN_MAP = ACTION_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Continuous Action Cond Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_ACTION___CONTINUOUS_ACTION_COND_TYPE__DIAGNOSTICCHAIN_MAP = ACTION_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Continuous Action Var Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTINUOUS_ACTION___CONTINUOUS_ACTION_VAR_TYPE__DIAGNOSTICCHAIN_MAP = ACTION_OPERATION_COUNT + 3;
-
-	/**
 	 * The number of operations of the '<em>Continuous Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTINUOUS_ACTION_OPERATION_COUNT = ACTION_OPERATION_COUNT + 4;
+	int CONTINUOUS_ACTION_OPERATION_COUNT = ACTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.hsu.grafcet.impl.ActionLinkImpl <em>Action Link</em>}' class.
@@ -1485,31 +1377,13 @@ public interface GrafcetPackage extends EPackage {
 	int CONDITION_FEATURE_COUNT = 1;
 
 	/**
-	 * The operation id for the '<em>Condition Term Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION___CONDITION_TERM_TYPE__DIAGNOSTICCHAIN_MAP = 0;
-
-	/**
-	 * The operation id for the '<em>Condition Variable Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION___CONDITION_VARIABLE_TYPE__DIAGNOSTICCHAIN_MAP = 1;
-
-	/**
 	 * The number of operations of the '<em>Condition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION_OPERATION_COUNT = 2;
+	int CONDITION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link de.hsu.grafcet.impl.TimeConditionImpl <em>Time Condition</em>}' class.
@@ -1576,24 +1450,6 @@ public interface GrafcetPackage extends EPackage {
 	int TIME_CONDITION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 4;
 
 	/**
-	 * The operation id for the '<em>Condition Term Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_CONDITION___CONDITION_TERM_TYPE__DIAGNOSTICCHAIN_MAP = CONDITION___CONDITION_TERM_TYPE__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Condition Variable Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_CONDITION___CONDITION_VARIABLE_TYPE__DIAGNOSTICCHAIN_MAP = CONDITION___CONDITION_VARIABLE_TYPE__DIAGNOSTICCHAIN_MAP;
-
-	/**
 	 * The number of operations of the '<em>Time Condition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1603,6 +1459,52 @@ public interface GrafcetPackage extends EPackage {
 	int TIME_CONDITION_OPERATION_COUNT = CONDITION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.hsu.grafcet.impl.HighlightableTypeImpl <em>Highlightable Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.hsu.grafcet.impl.HighlightableTypeImpl
+	 * @see de.hsu.grafcet.impl.GrafcetPackageImpl#getHighlightableType()
+	 * @generated
+	 */
+	int HIGHLIGHTABLE_TYPE = 22;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HIGHLIGHTABLE_TYPE__ID = NODE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Highlight</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HIGHLIGHTABLE_TYPE__HIGHLIGHT = NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Highlightable Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HIGHLIGHTABLE_TYPE_FEATURE_COUNT = NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Highlightable Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HIGHLIGHTABLE_TYPE_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.hsu.grafcet.ForcingOrderType <em>Forcing Order Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1610,7 +1512,7 @@ public interface GrafcetPackage extends EPackage {
 	 * @see de.hsu.grafcet.impl.GrafcetPackageImpl#getForcingOrderType()
 	 * @generated
 	 */
-	int FORCING_ORDER_TYPE = 22;
+	int FORCING_ORDER_TYPE = 23;
 
 	/**
 	 * The meta object id for the '{@link de.hsu.grafcet.StoredActionType <em>Stored Action Type</em>}' enum.
@@ -1620,7 +1522,7 @@ public interface GrafcetPackage extends EPackage {
 	 * @see de.hsu.grafcet.impl.GrafcetPackageImpl#getStoredActionType()
 	 * @generated
 	 */
-	int STORED_ACTION_TYPE = 23;
+	int STORED_ACTION_TYPE = 24;
 
 	/**
 	 * The meta object id for the '{@link de.hsu.grafcet.ContinuousActionType <em>Continuous Action Type</em>}' enum.
@@ -1630,7 +1532,7 @@ public interface GrafcetPackage extends EPackage {
 	 * @see de.hsu.grafcet.impl.GrafcetPackageImpl#getContinuousActionType()
 	 * @generated
 	 */
-	int CONTINUOUS_ACTION_TYPE = 24;
+	int CONTINUOUS_ACTION_TYPE = 25;
 
 	/**
 	 * The meta object id for the '{@link de.hsu.grafcet.TimeUnit <em>Time Unit</em>}' enum.
@@ -1640,7 +1542,7 @@ public interface GrafcetPackage extends EPackage {
 	 * @see de.hsu.grafcet.impl.GrafcetPackageImpl#getTimeUnit()
 	 * @generated
 	 */
-	int TIME_UNIT = 25;
+	int TIME_UNIT = 26;
 
 	/**
 	 * The meta object id for the '{@link de.hsu.grafcet.TimeConditionType <em>Time Condition Type</em>}' enum.
@@ -1650,7 +1552,7 @@ public interface GrafcetPackage extends EPackage {
 	 * @see de.hsu.grafcet.impl.GrafcetPackageImpl#getTimeConditionType()
 	 * @generated
 	 */
-	int TIME_CONDITION_TYPE = 26;
+	int TIME_CONDITION_TYPE = 27;
 
 	/**
 	 * Returns the meta object for class '{@link de.hsu.grafcet.Grafcet <em>Grafcet</em>}'.
@@ -2109,16 +2011,6 @@ public interface GrafcetPackage extends EPackage {
 	EReference getAction_Variable();
 
 	/**
-	 * Returns the meta object for the '{@link de.hsu.grafcet.Action#ActionOutputVariableType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Action Output Variable Type</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Action Output Variable Type</em>' operation.
-	 * @see de.hsu.grafcet.Action#ActionOutputVariableType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getAction__ActionOutputVariableType__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link de.hsu.grafcet.StoredAction <em>Stored Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2151,26 +2043,6 @@ public interface GrafcetPackage extends EPackage {
 	EReference getStoredAction_Value();
 
 	/**
-	 * Returns the meta object for the '{@link de.hsu.grafcet.StoredAction#StoredActionCondType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Stored Action Cond Type</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Stored Action Cond Type</em>' operation.
-	 * @see de.hsu.grafcet.StoredAction#StoredActionCondType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getStoredAction__StoredActionCondType__DiagnosticChain_Map();
-
-	/**
-	 * Returns the meta object for the '{@link de.hsu.grafcet.StoredAction#StoredActionVarType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Stored Action Var Type</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Stored Action Var Type</em>' operation.
-	 * @see de.hsu.grafcet.StoredAction#StoredActionVarType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getStoredAction__StoredActionVarType__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link de.hsu.grafcet.ContinuousAction <em>Continuous Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2190,26 +2062,6 @@ public interface GrafcetPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getContinuousAction_ContinuousActionType();
-
-	/**
-	 * Returns the meta object for the '{@link de.hsu.grafcet.ContinuousAction#ContinuousActionCondType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Continuous Action Cond Type</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Continuous Action Cond Type</em>' operation.
-	 * @see de.hsu.grafcet.ContinuousAction#ContinuousActionCondType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getContinuousAction__ContinuousActionCondType__DiagnosticChain_Map();
-
-	/**
-	 * Returns the meta object for the '{@link de.hsu.grafcet.ContinuousAction#ContinuousActionVarType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Continuous Action Var Type</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Continuous Action Var Type</em>' operation.
-	 * @see de.hsu.grafcet.ContinuousAction#ContinuousActionVarType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getContinuousAction__ContinuousActionVarType__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link de.hsu.grafcet.ActionLink <em>Action Link</em>}'.
@@ -2319,24 +2171,25 @@ public interface GrafcetPackage extends EPackage {
 	EReference getCondition_Term();
 
 	/**
-	 * Returns the meta object for the '{@link de.hsu.grafcet.Condition#ConditionTermType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Condition Term Type</em>}' operation.
+	 * Returns the meta object for class '{@link de.hsu.grafcet.HighlightableType <em>Highlightable Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Condition Term Type</em>' operation.
-	 * @see de.hsu.grafcet.Condition#ConditionTermType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @return the meta object for class '<em>Highlightable Type</em>'.
+	 * @see de.hsu.grafcet.HighlightableType
 	 * @generated
 	 */
-	EOperation getCondition__ConditionTermType__DiagnosticChain_Map();
+	EClass getHighlightableType();
 
 	/**
-	 * Returns the meta object for the '{@link de.hsu.grafcet.Condition#ConditionVariableType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Condition Variable Type</em>}' operation.
+	 * Returns the meta object for the attribute '{@link de.hsu.grafcet.HighlightableType#isHighlight <em>Highlight</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Condition Variable Type</em>' operation.
-	 * @see de.hsu.grafcet.Condition#ConditionVariableType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @return the meta object for the attribute '<em>Highlight</em>'.
+	 * @see de.hsu.grafcet.HighlightableType#isHighlight()
+	 * @see #getHighlightableType()
 	 * @generated
 	 */
-	EOperation getCondition__ConditionVariableType__DiagnosticChain_Map();
+	EAttribute getHighlightableType_Highlight();
 
 	/**
 	 * Returns the meta object for enum '{@link de.hsu.grafcet.ForcingOrderType <em>Forcing Order Type</em>}'.
@@ -2791,15 +2644,6 @@ public interface GrafcetPackage extends EPackage {
 		EReference ACTION__VARIABLE = eINSTANCE.getAction_Variable();
 
 		/**
-		 * The meta object literal for the '<em><b>Action Output Variable Type</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ACTION___ACTION_OUTPUT_VARIABLE_TYPE__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getAction__ActionOutputVariableType__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link de.hsu.grafcet.impl.StoredActionImpl <em>Stored Action</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2826,24 +2670,6 @@ public interface GrafcetPackage extends EPackage {
 		EReference STORED_ACTION__VALUE = eINSTANCE.getStoredAction_Value();
 
 		/**
-		 * The meta object literal for the '<em><b>Stored Action Cond Type</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation STORED_ACTION___STORED_ACTION_COND_TYPE__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getStoredAction__StoredActionCondType__DiagnosticChain_Map();
-
-		/**
-		 * The meta object literal for the '<em><b>Stored Action Var Type</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation STORED_ACTION___STORED_ACTION_VAR_TYPE__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getStoredAction__StoredActionVarType__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link de.hsu.grafcet.impl.ContinuousActionImpl <em>Continuous Action</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2860,24 +2686,6 @@ public interface GrafcetPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONTINUOUS_ACTION__CONTINUOUS_ACTION_TYPE = eINSTANCE.getContinuousAction_ContinuousActionType();
-
-		/**
-		 * The meta object literal for the '<em><b>Continuous Action Cond Type</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CONTINUOUS_ACTION___CONTINUOUS_ACTION_COND_TYPE__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getContinuousAction__ContinuousActionCondType__DiagnosticChain_Map();
-
-		/**
-		 * The meta object literal for the '<em><b>Continuous Action Var Type</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CONTINUOUS_ACTION___CONTINUOUS_ACTION_VAR_TYPE__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getContinuousAction__ContinuousActionVarType__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link de.hsu.grafcet.impl.ActionLinkImpl <em>Action Link</em>}' class.
@@ -2966,22 +2774,22 @@ public interface GrafcetPackage extends EPackage {
 		EReference CONDITION__TERM = eINSTANCE.getCondition_Term();
 
 		/**
-		 * The meta object literal for the '<em><b>Condition Term Type</b></em>' operation.
+		 * The meta object literal for the '{@link de.hsu.grafcet.impl.HighlightableTypeImpl <em>Highlightable Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see de.hsu.grafcet.impl.HighlightableTypeImpl
+		 * @see de.hsu.grafcet.impl.GrafcetPackageImpl#getHighlightableType()
 		 * @generated
 		 */
-		EOperation CONDITION___CONDITION_TERM_TYPE__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getCondition__ConditionTermType__DiagnosticChain_Map();
+		EClass HIGHLIGHTABLE_TYPE = eINSTANCE.getHighlightableType();
 
 		/**
-		 * The meta object literal for the '<em><b>Condition Variable Type</b></em>' operation.
+		 * The meta object literal for the '<em><b>Highlight</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONDITION___CONDITION_VARIABLE_TYPE__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getCondition__ConditionVariableType__DiagnosticChain_Map();
+		EAttribute HIGHLIGHTABLE_TYPE__HIGHLIGHT = eINSTANCE.getHighlightableType_Highlight();
 
 		/**
 		 * The meta object literal for the '{@link de.hsu.grafcet.ForcingOrderType <em>Forcing Order Type</em>}' enum.

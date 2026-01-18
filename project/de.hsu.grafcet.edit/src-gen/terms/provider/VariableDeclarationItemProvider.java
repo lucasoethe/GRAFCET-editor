@@ -61,6 +61,7 @@ public class VariableDeclarationItemProvider extends ItemProviderAdapter impleme
 			addNamePropertyDescriptor(object);
 			addVariableDeclarationTypePropertyDescriptor(object);
 			addStepPropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -110,6 +111,22 @@ public class VariableDeclarationItemProvider extends ItemProviderAdapter impleme
 						getString("_UI_PropertyDescriptor_description", "_UI_VariableDeclaration_step_feature",
 								"_UI_VariableDeclaration_type"),
 						TermsPackage.Literals.VARIABLE_DECLARATION__STEP, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_VariableDeclaration_value_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_VariableDeclaration_value_feature",
+								"_UI_VariableDeclaration_type"),
+						TermsPackage.Literals.VARIABLE_DECLARATION__VALUE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -190,6 +207,7 @@ public class VariableDeclarationItemProvider extends ItemProviderAdapter impleme
 		switch (notification.getFeatureID(VariableDeclaration.class)) {
 		case TermsPackage.VARIABLE_DECLARATION__NAME:
 		case TermsPackage.VARIABLE_DECLARATION__VARIABLE_DECLARATION_TYPE:
+		case TermsPackage.VARIABLE_DECLARATION__VALUE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case TermsPackage.VARIABLE_DECLARATION__SORT:

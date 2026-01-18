@@ -6,6 +6,7 @@ import de.hsu.grafcet.*;
 
 import java.util.Map;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 
@@ -40,68 +41,12 @@ public class GrafcetValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "de.hsu.grafcet";
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Action Output Variable Type' of 'Action'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int ACTION__ACTION_OUTPUT_VARIABLE_TYPE = 1;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Stored Action Cond Type' of 'Stored Action'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int STORED_ACTION__STORED_ACTION_COND_TYPE = 2;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Stored Action Var Type' of 'Stored Action'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int STORED_ACTION__STORED_ACTION_VAR_TYPE = 3;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Continuous Action Cond Type' of 'Continuous Action'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int CONTINUOUS_ACTION__CONTINUOUS_ACTION_COND_TYPE = 4;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Continuous Action Var Type' of 'Continuous Action'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int CONTINUOUS_ACTION__CONTINUOUS_ACTION_VAR_TYPE = 5;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Condition Term Type' of 'Condition'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int CONDITION__CONDITION_TERM_TYPE = 6;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Condition Variable Type' of 'Condition'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int CONDITION__CONDITION_VARIABLE_TYPE = 7;
-
-	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 7;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 0;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -186,6 +131,8 @@ public class GrafcetValidator extends EObjectValidator {
 			return validateTimeCondition((TimeCondition) value, diagnostics, context);
 		case GrafcetPackage.CONDITION:
 			return validateCondition((Condition) value, diagnostics, context);
+		case GrafcetPackage.HIGHLIGHTABLE_TYPE:
+			return validateHighlightableType((HighlightableType) value, diagnostics, context);
 		case GrafcetPackage.FORCING_ORDER_TYPE:
 			return validateForcingOrderType((ForcingOrderType) value, diagnostics, context);
 		case GrafcetPackage.STORED_ACTION_TYPE:
@@ -302,9 +249,9 @@ public class GrafcetValidator extends EObjectValidator {
 		if (result || diagnostics != null)
 			result &= validate_EveryMapEntryUnique(transition, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validateCondition_ConditionVariableType(transition, diagnostics, context);
-		if (result || diagnostics != null)
 			result &= validateCondition_ConditionTermType(transition, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validateCondition_ConditionVariableType(transition, diagnostics, context);
 		return result;
 	}
 
@@ -402,6 +349,16 @@ public class GrafcetValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the ActionOutputVariableType constraint of '<em>Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ACTION__ACTION_OUTPUT_VARIABLE_TYPE__EEXPRESSION = "self.variable.variableDeclaration.variableDeclarationType = terms::VariableDeclarationType::output \n"
+			+ "\t\t\tor if self.oclIsTypeOf(StoredAction) then \n"
+			+ "\t\t\tself.variable.variableDeclaration.variableDeclarationType = terms::VariableDeclarationType::internal else false endif";
+
+	/**
 	 * Validates the ActionOutputVariableType constraint of '<em>Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -409,7 +366,9 @@ public class GrafcetValidator extends EObjectValidator {
 	 */
 	public boolean validateAction_ActionOutputVariableType(Action action, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		return action.ActionOutputVariableType(diagnostics, context);
+		return validate(GrafcetPackage.Literals.ACTION, action, diagnostics, context,
+				"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "ActionOutputVariableType",
+				ACTION__ACTION_OUTPUT_VARIABLE_TYPE__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
 	}
 
 	/**
@@ -439,15 +398,23 @@ public class GrafcetValidator extends EObjectValidator {
 		if (result || diagnostics != null)
 			result &= validateAction_ActionOutputVariableType(storedAction, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validateCondition_ConditionVariableType(storedAction, diagnostics, context);
-		if (result || diagnostics != null)
 			result &= validateCondition_ConditionTermType(storedAction, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validateCondition_ConditionVariableType(storedAction, diagnostics, context);
 		if (result || diagnostics != null)
 			result &= validateStoredAction_StoredActionVarType(storedAction, diagnostics, context);
 		if (result || diagnostics != null)
 			result &= validateStoredAction_StoredActionCondType(storedAction, diagnostics, context);
 		return result;
 	}
+
+	/**
+	 * The cached validation expression for the StoredActionVarType constraint of '<em>Stored Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STORED_ACTION__STORED_ACTION_VAR_TYPE__EEXPRESSION = "self.variable.variableDeclaration.sort.oclType() = self.value.sort.oclType()";
 
 	/**
 	 * Validates the StoredActionVarType constraint of '<em>Stored Action</em>'.
@@ -457,8 +424,24 @@ public class GrafcetValidator extends EObjectValidator {
 	 */
 	public boolean validateStoredAction_StoredActionVarType(StoredAction storedAction, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		return storedAction.StoredActionVarType(diagnostics, context);
+		return validate(GrafcetPackage.Literals.STORED_ACTION, storedAction, diagnostics, context,
+				"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "StoredActionVarType",
+				STORED_ACTION__STORED_ACTION_VAR_TYPE__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
 	}
+
+	/**
+	 * The cached validation expression for the StoredActionCondType constraint of '<em>Stored Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String STORED_ACTION__STORED_ACTION_COND_TYPE__EEXPRESSION = "\n"
+			+ "\t\t\tself.storedActionType = grafcet::StoredActionType::event implies(\n"
+			+ "\t\t\tif self.term.oclIsTypeOf(terms::Variable) then false else\n"
+			+ "\t\t\tself.term.oclAsType(terms::Operator)->closure(term: terms::Term| term->selectByKind(terms::Operator).subterm)\n"
+			+ "\t\t\t->select(operator|operator.oclIsTypeOf(terms::RisingEdge))->size()\n"
+			+ "\t\t\t+ self.term.oclAsType(terms::Operator)->closure(term: terms::Term| term->selectByKind(terms::Operator).subterm)\n"
+			+ "\t\t\t->select(operator|operator.oclIsTypeOf(terms::FallingEdge))->size() > 0\n" + "\t\t\tendif)";
 
 	/**
 	 * Validates the StoredActionCondType constraint of '<em>Stored Action</em>'.
@@ -468,7 +451,9 @@ public class GrafcetValidator extends EObjectValidator {
 	 */
 	public boolean validateStoredAction_StoredActionCondType(StoredAction storedAction, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		return storedAction.StoredActionCondType(diagnostics, context);
+		return validate(GrafcetPackage.Literals.STORED_ACTION, storedAction, diagnostics, context,
+				"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "StoredActionCondType",
+				STORED_ACTION__STORED_ACTION_COND_TYPE__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
 	}
 
 	/**
@@ -498,15 +483,23 @@ public class GrafcetValidator extends EObjectValidator {
 		if (result || diagnostics != null)
 			result &= validateAction_ActionOutputVariableType(continuousAction, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validateCondition_ConditionVariableType(continuousAction, diagnostics, context);
-		if (result || diagnostics != null)
 			result &= validateCondition_ConditionTermType(continuousAction, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validateCondition_ConditionVariableType(continuousAction, diagnostics, context);
 		if (result || diagnostics != null)
 			result &= validateContinuousAction_ContinuousActionVarType(continuousAction, diagnostics, context);
 		if (result || diagnostics != null)
 			result &= validateContinuousAction_ContinuousActionCondType(continuousAction, diagnostics, context);
 		return result;
 	}
+
+	/**
+	 * The cached validation expression for the ContinuousActionVarType constraint of '<em>Continuous Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CONTINUOUS_ACTION__CONTINUOUS_ACTION_VAR_TYPE__EEXPRESSION = "self.variable.variableDeclaration.sort.oclIsTypeOf(terms::Bool)";
 
 	/**
 	 * Validates the ContinuousActionVarType constraint of '<em>Continuous Action</em>'.
@@ -516,8 +509,25 @@ public class GrafcetValidator extends EObjectValidator {
 	 */
 	public boolean validateContinuousAction_ContinuousActionVarType(ContinuousAction continuousAction,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return continuousAction.ContinuousActionVarType(diagnostics, context);
+		return validate(GrafcetPackage.Literals.CONTINUOUS_ACTION, continuousAction, diagnostics, context,
+				"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "ContinuousActionVarType",
+				CONTINUOUS_ACTION__CONTINUOUS_ACTION_VAR_TYPE__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
 	}
+
+	/**
+	 * The cached validation expression for the ContinuousActionCondType constraint of '<em>Continuous Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CONTINUOUS_ACTION__CONTINUOUS_ACTION_COND_TYPE__EEXPRESSION = "\n"
+			+ "\t\t\tif self.continuousActionType = grafcet::ContinuousActionType::assignationCondition then\n"
+			+ "\t\t\tif self.term.oclIsTypeOf(terms::Variable) then true else\n"
+			+ "\t\t\t\tself.term.oclAsType(terms::Operator)->closure(term: terms::Term| term->selectByKind(terms::Operator).subterm)\n"
+			+ "\t\t\t\t\t->select(operator|operator.oclIsTypeOf(terms::RisingEdge))->size()\n"
+			+ "\t\t\t\t+ self.term.oclAsType(terms::Operator)->closure(term: terms::Term| term->selectByKind(terms::Operator).subterm)\n"
+			+ "\t\t\t\t\t->select(operator|operator.oclIsTypeOf(terms::FallingEdge))->size() = 0\n" + "\t\t\tendif\n"
+			+ "\t\t\telse true endif";
 
 	/**
 	 * Validates the ContinuousActionCondType constraint of '<em>Continuous Action</em>'.
@@ -527,7 +537,9 @@ public class GrafcetValidator extends EObjectValidator {
 	 */
 	public boolean validateContinuousAction_ContinuousActionCondType(ContinuousAction continuousAction,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return continuousAction.ContinuousActionCondType(diagnostics, context);
+		return validate(GrafcetPackage.Literals.CONTINUOUS_ACTION, continuousAction, diagnostics, context,
+				"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "ContinuousActionCondType",
+				CONTINUOUS_ACTION__CONTINUOUS_ACTION_COND_TYPE__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
 	}
 
 	/**
@@ -564,9 +576,9 @@ public class GrafcetValidator extends EObjectValidator {
 		if (result || diagnostics != null)
 			result &= validate_EveryMapEntryUnique(timeCondition, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validateCondition_ConditionVariableType(timeCondition, diagnostics, context);
-		if (result || diagnostics != null)
 			result &= validateCondition_ConditionTermType(timeCondition, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validateCondition_ConditionVariableType(timeCondition, diagnostics, context);
 		return result;
 	}
 
@@ -594,22 +606,19 @@ public class GrafcetValidator extends EObjectValidator {
 		if (result || diagnostics != null)
 			result &= validate_EveryMapEntryUnique(condition, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validateCondition_ConditionVariableType(condition, diagnostics, context);
-		if (result || diagnostics != null)
 			result &= validateCondition_ConditionTermType(condition, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validateCondition_ConditionVariableType(condition, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the ConditionVariableType constraint of '<em>Condition</em>'.
+	 * The cached validation expression for the ConditionTermType constraint of '<em>Condition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCondition_ConditionVariableType(Condition condition, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
-		return condition.ConditionVariableType(diagnostics, context);
-	}
+	protected static final String CONDITION__CONDITION_TERM_TYPE__EEXPRESSION = "self.term <> null implies self.term.sort.oclIsTypeOf(terms::Bool)";
 
 	/**
 	 * Validates the ConditionTermType constraint of '<em>Condition</em>'.
@@ -619,7 +628,44 @@ public class GrafcetValidator extends EObjectValidator {
 	 */
 	public boolean validateCondition_ConditionTermType(Condition condition, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		return condition.ConditionTermType(diagnostics, context);
+		return validate(GrafcetPackage.Literals.CONDITION, condition, diagnostics, context,
+				"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "ConditionTermType",
+				CONDITION__CONDITION_TERM_TYPE__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
+	}
+
+	/**
+	 * The cached validation expression for the ConditionVariableType constraint of '<em>Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CONDITION__CONDITION_VARIABLE_TYPE__EEXPRESSION = "self.term <> null implies(if self.term.oclIsTypeOf(terms::Variable) then \n"
+			+ "\t\t\tself.term.oclAsType(terms::Variable).variableDeclaration.variableDeclarationType <> terms::VariableDeclarationType::output else\n"
+			+ "\t\t\tself.term.oclAsType(terms::Operator)->closure(term: terms::Term| term->selectByKind(terms::Operator).subterm)\n"
+			+ "\t\t\t->selectByKind(terms::Variable)->select(var|var.variableDeclaration.variableDeclarationType = terms::VariableDeclarationType::output)->size() = 0\n"
+			+ "\t\t\tendif)";
+
+	/**
+	 * Validates the ConditionVariableType constraint of '<em>Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCondition_ConditionVariableType(Condition condition, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate(GrafcetPackage.Literals.CONDITION, condition, diagnostics, context,
+				"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "ConditionVariableType",
+				CONDITION__CONDITION_VARIABLE_TYPE__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateHighlightableType(HighlightableType highlightableType, DiagnosticChain diagnostics,
+			Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(highlightableType, diagnostics, context);
 	}
 
 	/**

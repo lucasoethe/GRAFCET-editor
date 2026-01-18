@@ -5,7 +5,6 @@ package terms;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -23,7 +22,8 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see terms.TermsFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore"
+ *        annotation="http://www.eclipse.org/OCL/Import ecore='http://www.eclipse.org/emf/2002/Ecore' grafcet='grafcet.ecore#/'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
  * @generated
  */
 public interface TermsPackage extends EPackage {
@@ -152,22 +152,13 @@ public interface TermsPackage extends EPackage {
 	int VARIABLE_FEATURE_COUNT = TERM_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Sort Variable</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE___SORT_VARIABLE__DIAGNOSTICCHAIN_MAP = TERM_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_OPERATION_COUNT = TERM_OPERATION_COUNT + 1;
+	int VARIABLE_OPERATION_COUNT = TERM_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link terms.impl.VariableDeclarationImpl <em>Variable Declaration</em>}' class.
@@ -216,22 +207,22 @@ public interface TermsPackage extends EPackage {
 	int VARIABLE_DECLARATION__STEP = 3;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_DECLARATION__VALUE = 4;
+
+	/**
 	 * The number of structural features of the '<em>Variable Declaration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_DECLARATION_FEATURE_COUNT = 4;
-
-	/**
-	 * The operation id for the '<em>Step Var Decl Set Step</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE_DECLARATION___STEP_VAR_DECL_SET_STEP__DIAGNOSTICCHAIN_MAP = 0;
+	int VARIABLE_DECLARATION_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Variable Declaration</em>' class.
@@ -240,7 +231,7 @@ public interface TermsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_DECLARATION_OPERATION_COUNT = 1;
+	int VARIABLE_DECLARATION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link terms.impl.OperatorImpl <em>Operator</em>}' class.
@@ -307,31 +298,13 @@ public interface TermsPackage extends EPackage {
 	int OPERATOR_FEATURE_COUNT = TERM_FEATURE_COUNT + 3;
 
 	/**
-	 * The operation id for the '<em>Operator Sort</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP = TERM_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Operator Input Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP = TERM_OPERATION_COUNT + 1;
-
-	/**
 	 * The number of operations of the '<em>Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATOR_OPERATION_COUNT = TERM_OPERATION_COUNT + 2;
+	int OPERATOR_OPERATION_COUNT = TERM_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link terms.impl.ConstantImpl <em>Constant</em>}' class.
@@ -396,24 +369,6 @@ public interface TermsPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONSTANT_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Operator Sort</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTANT___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP = OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Operator Input Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTANT___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP = OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The number of operations of the '<em>Constant</em>' class.
@@ -600,40 +555,13 @@ public interface TermsPackage extends EPackage {
 	int BOOLEAN_OPERATOR_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Operator Sort</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOLEAN_OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP = OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Operator Input Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOLEAN_OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP = OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Input Output Types Bool Op</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOLEAN_OPERATOR___INPUT_OUTPUT_TYPES_BOOL_OP__DIAGNOSTICCHAIN_MAP = OPERATOR_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Boolean Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOLEAN_OPERATOR_OPERATION_COUNT = OPERATOR_OPERATION_COUNT + 1;
+	int BOOLEAN_OPERATOR_OPERATION_COUNT = OPERATOR_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link terms.impl.AndImpl <em>And</em>}' class.
@@ -700,49 +628,13 @@ public interface TermsPackage extends EPackage {
 	int AND_FEATURE_COUNT = BOOLEAN_OPERATOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Operator Sort</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AND___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Operator Input Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AND___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Input Output Types Bool Op</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AND___INPUT_OUTPUT_TYPES_BOOL_OP__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR___INPUT_OUTPUT_TYPES_BOOL_OP__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Input Size And</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AND___INPUT_SIZE_AND__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>And</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AND_OPERATION_COUNT = BOOLEAN_OPERATOR_OPERATION_COUNT + 1;
+	int AND_OPERATION_COUNT = BOOLEAN_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link terms.impl.OrImpl <em>Or</em>}' class.
@@ -809,49 +701,13 @@ public interface TermsPackage extends EPackage {
 	int OR_FEATURE_COUNT = BOOLEAN_OPERATOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Operator Sort</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Operator Input Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Input Output Types Bool Op</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OR___INPUT_OUTPUT_TYPES_BOOL_OP__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR___INPUT_OUTPUT_TYPES_BOOL_OP__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Input Size Or</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OR___INPUT_SIZE_OR__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Or</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OR_OPERATION_COUNT = BOOLEAN_OPERATOR_OPERATION_COUNT + 1;
+	int OR_OPERATION_COUNT = BOOLEAN_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link terms.impl.NotImpl <em>Not</em>}' class.
@@ -918,49 +774,13 @@ public interface TermsPackage extends EPackage {
 	int NOT_FEATURE_COUNT = BOOLEAN_OPERATOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Operator Sort</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NOT___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Operator Input Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NOT___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Input Output Types Bool Op</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NOT___INPUT_OUTPUT_TYPES_BOOL_OP__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR___INPUT_OUTPUT_TYPES_BOOL_OP__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Input Size Not</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NOT___INPUT_SIZE_NOT__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Not</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NOT_OPERATION_COUNT = BOOLEAN_OPERATOR_OPERATION_COUNT + 1;
+	int NOT_OPERATION_COUNT = BOOLEAN_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link terms.impl.EqualityImpl <em>Equality</em>}' class.
@@ -1027,40 +847,13 @@ public interface TermsPackage extends EPackage {
 	int EQUALITY_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Operator Sort</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EQUALITY___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP = OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Operator Input Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EQUALITY___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP = OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Input Size Input Output Types Eq</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EQUALITY___INPUT_SIZE_INPUT_OUTPUT_TYPES_EQ__DIAGNOSTICCHAIN_MAP = OPERATOR_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Equality</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EQUALITY_OPERATION_COUNT = OPERATOR_OPERATION_COUNT + 1;
+	int EQUALITY_OPERATION_COUNT = OPERATOR_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link terms.impl.BooleanConstantImpl <em>Boolean Constant</em>}' class.
@@ -1136,40 +929,13 @@ public interface TermsPackage extends EPackage {
 	int BOOLEAN_CONSTANT_FEATURE_COUNT = CONSTANT_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Operator Sort</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOLEAN_CONSTANT___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP = CONSTANT___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Operator Input Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOLEAN_CONSTANT___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP = CONSTANT___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Input Size Output Types Bool Const</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOLEAN_CONSTANT___INPUT_SIZE_OUTPUT_TYPES_BOOL_CONST__DIAGNOSTICCHAIN_MAP = CONSTANT_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Boolean Constant</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOLEAN_CONSTANT_OPERATION_COUNT = CONSTANT_OPERATION_COUNT + 1;
+	int BOOLEAN_CONSTANT_OPERATION_COUNT = CONSTANT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link terms.impl.IntegerOperatorImpl <em>Integer Operator</em>}' class.
@@ -1236,40 +1002,13 @@ public interface TermsPackage extends EPackage {
 	int INTEGER_OPERATOR_FEATURE_COUNT = OPERATOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Operator Sort</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP = OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Operator Input Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP = OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Input Size Types Int Op</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_OPERATOR___INPUT_SIZE_TYPES_INT_OP__DIAGNOSTICCHAIN_MAP = OPERATOR_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Integer Operator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGER_OPERATOR_OPERATION_COUNT = OPERATOR_OPERATION_COUNT + 1;
+	int INTEGER_OPERATOR_OPERATION_COUNT = OPERATOR_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link terms.impl.AdditionImpl <em>Addition</em>}' class.
@@ -1336,49 +1075,13 @@ public interface TermsPackage extends EPackage {
 	int ADDITION_FEATURE_COUNT = INTEGER_OPERATOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Operator Sort</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADDITION___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP = INTEGER_OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Operator Input Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADDITION___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP = INTEGER_OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Input Size Types Int Op</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADDITION___INPUT_SIZE_TYPES_INT_OP__DIAGNOSTICCHAIN_MAP = INTEGER_OPERATOR___INPUT_SIZE_TYPES_INT_OP__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Output Types Add</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADDITION___OUTPUT_TYPES_ADD__DIAGNOSTICCHAIN_MAP = INTEGER_OPERATOR_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Addition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADDITION_OPERATION_COUNT = INTEGER_OPERATOR_OPERATION_COUNT + 1;
+	int ADDITION_OPERATION_COUNT = INTEGER_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link terms.impl.SubstractionImpl <em>Substraction</em>}' class.
@@ -1445,49 +1148,13 @@ public interface TermsPackage extends EPackage {
 	int SUBSTRACTION_FEATURE_COUNT = INTEGER_OPERATOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Operator Sort</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUBSTRACTION___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP = INTEGER_OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Operator Input Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUBSTRACTION___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP = INTEGER_OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Input Size Types Int Op</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUBSTRACTION___INPUT_SIZE_TYPES_INT_OP__DIAGNOSTICCHAIN_MAP = INTEGER_OPERATOR___INPUT_SIZE_TYPES_INT_OP__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Output Types Substr</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUBSTRACTION___OUTPUT_TYPES_SUBSTR__DIAGNOSTICCHAIN_MAP = INTEGER_OPERATOR_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Substraction</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBSTRACTION_OPERATION_COUNT = INTEGER_OPERATOR_OPERATION_COUNT + 1;
+	int SUBSTRACTION_OPERATION_COUNT = INTEGER_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link terms.impl.GreaterThanImpl <em>Greater Than</em>}' class.
@@ -1554,49 +1221,13 @@ public interface TermsPackage extends EPackage {
 	int GREATER_THAN_FEATURE_COUNT = INTEGER_OPERATOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Operator Sort</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GREATER_THAN___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP = INTEGER_OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Operator Input Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GREATER_THAN___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP = INTEGER_OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Input Size Types Int Op</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GREATER_THAN___INPUT_SIZE_TYPES_INT_OP__DIAGNOSTICCHAIN_MAP = INTEGER_OPERATOR___INPUT_SIZE_TYPES_INT_OP__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Output Types Great</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GREATER_THAN___OUTPUT_TYPES_GREAT__DIAGNOSTICCHAIN_MAP = INTEGER_OPERATOR_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Greater Than</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GREATER_THAN_OPERATION_COUNT = INTEGER_OPERATOR_OPERATION_COUNT + 1;
+	int GREATER_THAN_OPERATION_COUNT = INTEGER_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link terms.impl.LessThanImpl <em>Less Than</em>}' class.
@@ -1663,49 +1294,13 @@ public interface TermsPackage extends EPackage {
 	int LESS_THAN_FEATURE_COUNT = INTEGER_OPERATOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Operator Sort</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LESS_THAN___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP = INTEGER_OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Operator Input Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LESS_THAN___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP = INTEGER_OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Input Size Types Int Op</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LESS_THAN___INPUT_SIZE_TYPES_INT_OP__DIAGNOSTICCHAIN_MAP = INTEGER_OPERATOR___INPUT_SIZE_TYPES_INT_OP__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Output Types Less</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LESS_THAN___OUTPUT_TYPES_LESS__DIAGNOSTICCHAIN_MAP = INTEGER_OPERATOR_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Less Than</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LESS_THAN_OPERATION_COUNT = INTEGER_OPERATOR_OPERATION_COUNT + 1;
+	int LESS_THAN_OPERATION_COUNT = INTEGER_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link terms.impl.IntegerConstantImpl <em>Integer Constant</em>}' class.
@@ -1781,40 +1376,13 @@ public interface TermsPackage extends EPackage {
 	int INTEGER_CONSTANT_FEATURE_COUNT = CONSTANT_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Operator Sort</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_CONSTANT___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP = CONSTANT___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Operator Input Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_CONSTANT___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP = CONSTANT___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Input Size Output Types Int Conts</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_CONSTANT___INPUT_SIZE_OUTPUT_TYPES_INT_CONTS__DIAGNOSTICCHAIN_MAP = CONSTANT_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Integer Constant</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTEGER_CONSTANT_OPERATION_COUNT = CONSTANT_OPERATION_COUNT + 1;
+	int INTEGER_CONSTANT_OPERATION_COUNT = CONSTANT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link terms.impl.RisingEdgeImpl <em>Rising Edge</em>}' class.
@@ -1881,49 +1449,13 @@ public interface TermsPackage extends EPackage {
 	int RISING_EDGE_FEATURE_COUNT = BOOLEAN_OPERATOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Operator Sort</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RISING_EDGE___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Operator Input Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RISING_EDGE___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Input Output Types Bool Op</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RISING_EDGE___INPUT_OUTPUT_TYPES_BOOL_OP__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR___INPUT_OUTPUT_TYPES_BOOL_OP__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Input Size Rising Edge</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RISING_EDGE___INPUT_SIZE_RISING_EDGE__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Rising Edge</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RISING_EDGE_OPERATION_COUNT = BOOLEAN_OPERATOR_OPERATION_COUNT + 1;
+	int RISING_EDGE_OPERATION_COUNT = BOOLEAN_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link terms.impl.FallingEdgeImpl <em>Falling Edge</em>}' class.
@@ -1990,49 +1522,13 @@ public interface TermsPackage extends EPackage {
 	int FALLING_EDGE_FEATURE_COUNT = BOOLEAN_OPERATOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Operator Sort</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FALLING_EDGE___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Operator Input Type</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FALLING_EDGE___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Input Output Types Bool Op</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FALLING_EDGE___INPUT_OUTPUT_TYPES_BOOL_OP__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR___INPUT_OUTPUT_TYPES_BOOL_OP__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Input Size Falling Edge</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FALLING_EDGE___INPUT_SIZE_FALLING_EDGE__DIAGNOSTICCHAIN_MAP = BOOLEAN_OPERATOR_OPERATION_COUNT + 0;
-
-	/**
 	 * The number of operations of the '<em>Falling Edge</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FALLING_EDGE_OPERATION_COUNT = BOOLEAN_OPERATOR_OPERATION_COUNT + 1;
+	int FALLING_EDGE_OPERATION_COUNT = BOOLEAN_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link terms.VariableDeclarationType <em>Variable Declaration Type</em>}' enum.
@@ -2098,16 +1594,6 @@ public interface TermsPackage extends EPackage {
 	EReference getVariable_VariableDeclaration();
 
 	/**
-	 * Returns the meta object for the '{@link terms.Variable#SortVariable(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Sort Variable</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Sort Variable</em>' operation.
-	 * @see terms.Variable#SortVariable(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getVariable__SortVariable__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link terms.VariableDeclaration <em>Variable Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2162,14 +1648,15 @@ public interface TermsPackage extends EPackage {
 	EReference getVariableDeclaration_Step();
 
 	/**
-	 * Returns the meta object for the '{@link terms.VariableDeclaration#StepVarDeclSetStep(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Step Var Decl Set Step</em>}' operation.
+	 * Returns the meta object for the attribute '{@link terms.VariableDeclaration#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Step Var Decl Set Step</em>' operation.
-	 * @see terms.VariableDeclaration#StepVarDeclSetStep(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see terms.VariableDeclaration#getValue()
+	 * @see #getVariableDeclaration()
 	 * @generated
 	 */
-	EOperation getVariableDeclaration__StepVarDeclSetStep__DiagnosticChain_Map();
+	EAttribute getVariableDeclaration_Value();
 
 	/**
 	 * Returns the meta object for class '{@link terms.Operator <em>Operator</em>}'.
@@ -2213,26 +1700,6 @@ public interface TermsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOperator_Input();
-
-	/**
-	 * Returns the meta object for the '{@link terms.Operator#OperatorSort(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Operator Sort</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Operator Sort</em>' operation.
-	 * @see terms.Operator#OperatorSort(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getOperator__OperatorSort__DiagnosticChain_Map();
-
-	/**
-	 * Returns the meta object for the '{@link terms.Operator#OperatorInputType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Operator Input Type</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Operator Input Type</em>' operation.
-	 * @see terms.Operator#OperatorInputType(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getOperator__OperatorInputType__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link terms.Constant <em>Constant</em>}'.
@@ -2296,16 +1763,6 @@ public interface TermsPackage extends EPackage {
 	EClass getBooleanOperator();
 
 	/**
-	 * Returns the meta object for the '{@link terms.BooleanOperator#InputOutputTypesBoolOp(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Input Output Types Bool Op</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Input Output Types Bool Op</em>' operation.
-	 * @see terms.BooleanOperator#InputOutputTypesBoolOp(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getBooleanOperator__InputOutputTypesBoolOp__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link terms.And <em>And</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2314,16 +1771,6 @@ public interface TermsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAnd();
-
-	/**
-	 * Returns the meta object for the '{@link terms.And#InputSizeAnd(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Input Size And</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Input Size And</em>' operation.
-	 * @see terms.And#InputSizeAnd(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getAnd__InputSizeAnd__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link terms.Or <em>Or</em>}'.
@@ -2336,16 +1783,6 @@ public interface TermsPackage extends EPackage {
 	EClass getOr();
 
 	/**
-	 * Returns the meta object for the '{@link terms.Or#InputSizeOr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Input Size Or</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Input Size Or</em>' operation.
-	 * @see terms.Or#InputSizeOr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getOr__InputSizeOr__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link terms.Not <em>Not</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2356,16 +1793,6 @@ public interface TermsPackage extends EPackage {
 	EClass getNot();
 
 	/**
-	 * Returns the meta object for the '{@link terms.Not#InputSizeNot(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Input Size Not</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Input Size Not</em>' operation.
-	 * @see terms.Not#InputSizeNot(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getNot__InputSizeNot__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link terms.Equality <em>Equality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2374,16 +1801,6 @@ public interface TermsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getEquality();
-
-	/**
-	 * Returns the meta object for the '{@link terms.Equality#InputSizeInputOutputTypesEq(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Input Size Input Output Types Eq</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Input Size Input Output Types Eq</em>' operation.
-	 * @see terms.Equality#InputSizeInputOutputTypesEq(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getEquality__InputSizeInputOutputTypesEq__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link terms.BooleanConstant <em>Boolean Constant</em>}'.
@@ -2407,16 +1824,6 @@ public interface TermsPackage extends EPackage {
 	EAttribute getBooleanConstant_Value();
 
 	/**
-	 * Returns the meta object for the '{@link terms.BooleanConstant#InputSizeOutputTypesBoolConst(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Input Size Output Types Bool Const</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Input Size Output Types Bool Const</em>' operation.
-	 * @see terms.BooleanConstant#InputSizeOutputTypesBoolConst(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getBooleanConstant__InputSizeOutputTypesBoolConst__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link terms.IntegerOperator <em>Integer Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2425,16 +1832,6 @@ public interface TermsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getIntegerOperator();
-
-	/**
-	 * Returns the meta object for the '{@link terms.IntegerOperator#InputSizeTypesIntOp(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Input Size Types Int Op</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Input Size Types Int Op</em>' operation.
-	 * @see terms.IntegerOperator#InputSizeTypesIntOp(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getIntegerOperator__InputSizeTypesIntOp__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link terms.Addition <em>Addition</em>}'.
@@ -2447,16 +1844,6 @@ public interface TermsPackage extends EPackage {
 	EClass getAddition();
 
 	/**
-	 * Returns the meta object for the '{@link terms.Addition#OutputTypesAdd(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Output Types Add</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Output Types Add</em>' operation.
-	 * @see terms.Addition#OutputTypesAdd(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getAddition__OutputTypesAdd__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link terms.Substraction <em>Substraction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2465,16 +1852,6 @@ public interface TermsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSubstraction();
-
-	/**
-	 * Returns the meta object for the '{@link terms.Substraction#OutputTypesSubstr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Output Types Substr</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Output Types Substr</em>' operation.
-	 * @see terms.Substraction#OutputTypesSubstr(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getSubstraction__OutputTypesSubstr__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link terms.GreaterThan <em>Greater Than</em>}'.
@@ -2487,16 +1864,6 @@ public interface TermsPackage extends EPackage {
 	EClass getGreaterThan();
 
 	/**
-	 * Returns the meta object for the '{@link terms.GreaterThan#OutputTypesGreat(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Output Types Great</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Output Types Great</em>' operation.
-	 * @see terms.GreaterThan#OutputTypesGreat(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getGreaterThan__OutputTypesGreat__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link terms.LessThan <em>Less Than</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2505,16 +1872,6 @@ public interface TermsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getLessThan();
-
-	/**
-	 * Returns the meta object for the '{@link terms.LessThan#OutputTypesLess(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Output Types Less</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Output Types Less</em>' operation.
-	 * @see terms.LessThan#OutputTypesLess(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getLessThan__OutputTypesLess__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link terms.IntegerConstant <em>Integer Constant</em>}'.
@@ -2538,16 +1895,6 @@ public interface TermsPackage extends EPackage {
 	EAttribute getIntegerConstant_Value();
 
 	/**
-	 * Returns the meta object for the '{@link terms.IntegerConstant#InputSizeOutputTypesIntConts(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Input Size Output Types Int Conts</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Input Size Output Types Int Conts</em>' operation.
-	 * @see terms.IntegerConstant#InputSizeOutputTypesIntConts(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getIntegerConstant__InputSizeOutputTypesIntConts__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link terms.RisingEdge <em>Rising Edge</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2558,16 +1905,6 @@ public interface TermsPackage extends EPackage {
 	EClass getRisingEdge();
 
 	/**
-	 * Returns the meta object for the '{@link terms.RisingEdge#InputSizeRisingEdge(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Input Size Rising Edge</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Input Size Rising Edge</em>' operation.
-	 * @see terms.RisingEdge#InputSizeRisingEdge(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getRisingEdge__InputSizeRisingEdge__DiagnosticChain_Map();
-
-	/**
 	 * Returns the meta object for class '{@link terms.FallingEdge <em>Falling Edge</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2576,16 +1913,6 @@ public interface TermsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getFallingEdge();
-
-	/**
-	 * Returns the meta object for the '{@link terms.FallingEdge#InputSizeFallingEdge(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Input Size Falling Edge</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Input Size Falling Edge</em>' operation.
-	 * @see terms.FallingEdge#InputSizeFallingEdge(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getFallingEdge__InputSizeFallingEdge__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for enum '{@link terms.VariableDeclarationType <em>Variable Declaration Type</em>}'.
@@ -2665,15 +1992,6 @@ public interface TermsPackage extends EPackage {
 		EReference VARIABLE__VARIABLE_DECLARATION = eINSTANCE.getVariable_VariableDeclaration();
 
 		/**
-		 * The meta object literal for the '<em><b>Sort Variable</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation VARIABLE___SORT_VARIABLE__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getVariable__SortVariable__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link terms.impl.VariableDeclarationImpl <em>Variable Declaration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2717,13 +2035,12 @@ public interface TermsPackage extends EPackage {
 		EReference VARIABLE_DECLARATION__STEP = eINSTANCE.getVariableDeclaration_Step();
 
 		/**
-		 * The meta object literal for the '<em><b>Step Var Decl Set Step</b></em>' operation.
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation VARIABLE_DECLARATION___STEP_VAR_DECL_SET_STEP__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getVariableDeclaration__StepVarDeclSetStep__DiagnosticChain_Map();
+		EAttribute VARIABLE_DECLARATION__VALUE = eINSTANCE.getVariableDeclaration_Value();
 
 		/**
 		 * The meta object literal for the '{@link terms.impl.OperatorImpl <em>Operator</em>}' class.
@@ -2758,24 +2075,6 @@ public interface TermsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference OPERATOR__INPUT = eINSTANCE.getOperator_Input();
-
-		/**
-		 * The meta object literal for the '<em><b>Operator Sort</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getOperator__OperatorSort__DiagnosticChain_Map();
-
-		/**
-		 * The meta object literal for the '<em><b>Operator Input Type</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getOperator__OperatorInputType__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link terms.impl.ConstantImpl <em>Constant</em>}' class.
@@ -2836,15 +2135,6 @@ public interface TermsPackage extends EPackage {
 		EClass BOOLEAN_OPERATOR = eINSTANCE.getBooleanOperator();
 
 		/**
-		 * The meta object literal for the '<em><b>Input Output Types Bool Op</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BOOLEAN_OPERATOR___INPUT_OUTPUT_TYPES_BOOL_OP__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getBooleanOperator__InputOutputTypesBoolOp__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link terms.impl.AndImpl <em>And</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2853,14 +2143,6 @@ public interface TermsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass AND = eINSTANCE.getAnd();
-
-		/**
-		 * The meta object literal for the '<em><b>Input Size And</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation AND___INPUT_SIZE_AND__DIAGNOSTICCHAIN_MAP = eINSTANCE.getAnd__InputSizeAnd__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link terms.impl.OrImpl <em>Or</em>}' class.
@@ -2873,14 +2155,6 @@ public interface TermsPackage extends EPackage {
 		EClass OR = eINSTANCE.getOr();
 
 		/**
-		 * The meta object literal for the '<em><b>Input Size Or</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation OR___INPUT_SIZE_OR__DIAGNOSTICCHAIN_MAP = eINSTANCE.getOr__InputSizeOr__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link terms.impl.NotImpl <em>Not</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2891,14 +2165,6 @@ public interface TermsPackage extends EPackage {
 		EClass NOT = eINSTANCE.getNot();
 
 		/**
-		 * The meta object literal for the '<em><b>Input Size Not</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation NOT___INPUT_SIZE_NOT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getNot__InputSizeNot__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link terms.impl.EqualityImpl <em>Equality</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2907,15 +2173,6 @@ public interface TermsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EQUALITY = eINSTANCE.getEquality();
-
-		/**
-		 * The meta object literal for the '<em><b>Input Size Input Output Types Eq</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EQUALITY___INPUT_SIZE_INPUT_OUTPUT_TYPES_EQ__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getEquality__InputSizeInputOutputTypesEq__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link terms.impl.BooleanConstantImpl <em>Boolean Constant</em>}' class.
@@ -2936,15 +2193,6 @@ public interface TermsPackage extends EPackage {
 		EAttribute BOOLEAN_CONSTANT__VALUE = eINSTANCE.getBooleanConstant_Value();
 
 		/**
-		 * The meta object literal for the '<em><b>Input Size Output Types Bool Const</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BOOLEAN_CONSTANT___INPUT_SIZE_OUTPUT_TYPES_BOOL_CONST__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getBooleanConstant__InputSizeOutputTypesBoolConst__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link terms.impl.IntegerOperatorImpl <em>Integer Operator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2953,15 +2201,6 @@ public interface TermsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass INTEGER_OPERATOR = eINSTANCE.getIntegerOperator();
-
-		/**
-		 * The meta object literal for the '<em><b>Input Size Types Int Op</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INTEGER_OPERATOR___INPUT_SIZE_TYPES_INT_OP__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getIntegerOperator__InputSizeTypesIntOp__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link terms.impl.AdditionImpl <em>Addition</em>}' class.
@@ -2974,15 +2213,6 @@ public interface TermsPackage extends EPackage {
 		EClass ADDITION = eINSTANCE.getAddition();
 
 		/**
-		 * The meta object literal for the '<em><b>Output Types Add</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation ADDITION___OUTPUT_TYPES_ADD__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getAddition__OutputTypesAdd__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link terms.impl.SubstractionImpl <em>Substraction</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2991,15 +2221,6 @@ public interface TermsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SUBSTRACTION = eINSTANCE.getSubstraction();
-
-		/**
-		 * The meta object literal for the '<em><b>Output Types Substr</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SUBSTRACTION___OUTPUT_TYPES_SUBSTR__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getSubstraction__OutputTypesSubstr__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link terms.impl.GreaterThanImpl <em>Greater Than</em>}' class.
@@ -3012,15 +2233,6 @@ public interface TermsPackage extends EPackage {
 		EClass GREATER_THAN = eINSTANCE.getGreaterThan();
 
 		/**
-		 * The meta object literal for the '<em><b>Output Types Great</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation GREATER_THAN___OUTPUT_TYPES_GREAT__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getGreaterThan__OutputTypesGreat__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link terms.impl.LessThanImpl <em>Less Than</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3029,15 +2241,6 @@ public interface TermsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass LESS_THAN = eINSTANCE.getLessThan();
-
-		/**
-		 * The meta object literal for the '<em><b>Output Types Less</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation LESS_THAN___OUTPUT_TYPES_LESS__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getLessThan__OutputTypesLess__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link terms.impl.IntegerConstantImpl <em>Integer Constant</em>}' class.
@@ -3058,15 +2261,6 @@ public interface TermsPackage extends EPackage {
 		EAttribute INTEGER_CONSTANT__VALUE = eINSTANCE.getIntegerConstant_Value();
 
 		/**
-		 * The meta object literal for the '<em><b>Input Size Output Types Int Conts</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation INTEGER_CONSTANT___INPUT_SIZE_OUTPUT_TYPES_INT_CONTS__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getIntegerConstant__InputSizeOutputTypesIntConts__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link terms.impl.RisingEdgeImpl <em>Rising Edge</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3077,15 +2271,6 @@ public interface TermsPackage extends EPackage {
 		EClass RISING_EDGE = eINSTANCE.getRisingEdge();
 
 		/**
-		 * The meta object literal for the '<em><b>Input Size Rising Edge</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation RISING_EDGE___INPUT_SIZE_RISING_EDGE__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getRisingEdge__InputSizeRisingEdge__DiagnosticChain_Map();
-
-		/**
 		 * The meta object literal for the '{@link terms.impl.FallingEdgeImpl <em>Falling Edge</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3094,15 +2279,6 @@ public interface TermsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass FALLING_EDGE = eINSTANCE.getFallingEdge();
-
-		/**
-		 * The meta object literal for the '<em><b>Input Size Falling Edge</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation FALLING_EDGE___INPUT_SIZE_FALLING_EDGE__DIAGNOSTICCHAIN_MAP = eINSTANCE
-				.getFallingEdge__InputSizeFallingEdge__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link terms.VariableDeclarationType <em>Variable Declaration Type</em>}' enum.

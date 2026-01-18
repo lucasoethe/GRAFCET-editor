@@ -131,6 +131,8 @@ public class GrafcetSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseInitializableType(step);
 			if (result == null)
+				result = caseHighlightableType(step);
+			if (result == null)
 				result = caseNode(step);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -264,6 +266,15 @@ public class GrafcetSwitch<T> extends Switch<T> {
 		case GrafcetPackage.CONDITION: {
 			Condition condition = (Condition) theEObject;
 			T result = caseCondition(condition);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case GrafcetPackage.HIGHLIGHTABLE_TYPE: {
+			HighlightableType highlightableType = (HighlightableType) theEObject;
+			T result = caseHighlightableType(highlightableType);
+			if (result == null)
+				result = caseNode(highlightableType);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -600,6 +611,21 @@ public class GrafcetSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCondition(Condition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Highlightable Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Highlightable Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHighlightableType(HighlightableType object) {
 		return null;
 	}
 

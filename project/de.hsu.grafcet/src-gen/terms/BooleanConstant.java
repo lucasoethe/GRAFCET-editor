@@ -2,10 +2,6 @@
  */
 package terms;
 
-import java.util.Map;
-
-import org.eclipse.emf.common.util.DiagnosticChain;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Boolean Constant</b></em>'.
@@ -20,6 +16,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * @see terms.TermsPackage#getBooleanConstant()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='InputSizeOutputTypesBoolConst'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot InputSizeOutputTypesBoolConst='self.input-&gt; size() = 0 and self.output.oclIsTypeOf(Bool)'"
  * @generated
  */
 public interface BooleanConstant extends Constant {
@@ -44,13 +41,5 @@ public interface BooleanConstant extends Constant {
 	 * @generated
 	 */
 	void setValue(boolean value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.input-&gt; size() = 0 and self.output.oclIsTypeOf(Bool)'"
-	 * @generated
-	 */
-	boolean InputSizeOutputTypesBoolConst(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // BooleanConstant

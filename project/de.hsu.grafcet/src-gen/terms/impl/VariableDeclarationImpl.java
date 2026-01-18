@@ -4,15 +4,8 @@ package terms.impl;
 
 import de.hsu.grafcet.InitializableType;
 
-import java.lang.reflect.InvocationTargetException;
-
-import java.util.Map;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -20,27 +13,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.ocl.pivot.evaluation.Executor;
-
-import org.eclipse.ocl.pivot.ids.EnumerationLiteralId;
-import org.eclipse.ocl.pivot.ids.IdResolver;
-import org.eclipse.ocl.pivot.ids.TypeId;
-
-import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsKindOfOperation;
-import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
-
-import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
-import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
-
-import org.eclipse.ocl.pivot.utilities.ClassUtil;
-import org.eclipse.ocl.pivot.utilities.PivotUtil;
-import org.eclipse.ocl.pivot.utilities.ValueUtil;
-
-import org.eclipse.ocl.pivot.values.IntegerValue;
-
 import terms.Sort;
 import terms.TermsPackage;
-import terms.TermsTables;
 import terms.VariableDeclaration;
 import terms.VariableDeclarationType;
 
@@ -56,6 +30,7 @@ import terms.VariableDeclarationType;
  *   <li>{@link terms.impl.VariableDeclarationImpl#getName <em>Name</em>}</li>
  *   <li>{@link terms.impl.VariableDeclarationImpl#getVariableDeclarationType <em>Variable Declaration Type</em>}</li>
  *   <li>{@link terms.impl.VariableDeclarationImpl#getStep <em>Step</em>}</li>
+ *   <li>{@link terms.impl.VariableDeclarationImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -120,6 +95,26 @@ public class VariableDeclarationImpl extends MinimalEObjectImpl.Container implem
 	 * @ordered
 	 */
 	protected InitializableType step;
+
+	/**
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALUE_EDEFAULT = "";
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected String value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -281,87 +276,21 @@ public class VariableDeclarationImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean StepVarDeclSetStep(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		final String constraintName = "VariableDeclaration::StepVarDeclSetStep";
-		try {
-			/**
-			 *
-			 * inv StepVarDeclSetStep:
-			 *   let severity : Integer[1] = constraintName.getSeverity()
-			 *   in
-			 *     if severity <= 0
-			 *     then true
-			 *     else
-			 *       let result : Boolean[?] = self.variableDeclarationType = VariableDeclarationType::step implies step <> null and
-			 *         self.sort.oclIsKindOf(Bool)
-			 *       in
-			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
-			 *     endif
-			 */
-			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this, context);
-			final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor,
-					TermsPackage.Literals.VARIABLE_DECLARATION___STEP_VAR_DECL_SET_STEP__DIAGNOSTICCHAIN_MAP);
-			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE
-					.evaluate(executor, severity_0, TermsTables.INT_0).booleanValue();
-			/*@NonInvalid*/ boolean local_0;
-			if (le) {
-				local_0 = true;
-			} else {
-				/*@Caught*/ Object CAUGHT_result;
-				try {
-					final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_terms_c_c_Bool = idResolver
-							.getClass(TermsTables.CLSSid_Bool, null);
-					final /*@NonInvalid*/ VariableDeclarationType variableDeclarationType = this
-							.getVariableDeclarationType();
-					final /*@NonInvalid*/ EnumerationLiteralId BOXED_variableDeclarationType = variableDeclarationType == null
-							? null
-							: TermsTables.ENUMid_VariableDeclarationType
-									.getEnumerationLiteralId(ClassUtil.nonNullState(variableDeclarationType.getName()));
-					final /*@NonInvalid*/ boolean eq = BOXED_variableDeclarationType == TermsTables.ELITid_step;
-					final /*@Thrown*/ Boolean result;
-					if (!eq) {
-						result = ValueUtil.TRUE_VALUE;
-					} else {
-						final /*@NonInvalid*/ InitializableType step = this.getStep();
-						final /*@NonInvalid*/ boolean ne = step != null;
-						final /*@NonInvalid*/ Boolean and;
-						if (!ne) {
-							and = ValueUtil.FALSE_VALUE;
-						} else {
-							final /*@NonInvalid*/ Sort sort = this.getSort();
-							final /*@NonInvalid*/ boolean oclIsKindOf = OclAnyOclIsKindOfOperation.INSTANCE
-									.evaluate(executor, sort, TYP_terms_c_c_Bool).booleanValue();
-							if (!oclIsKindOf) {
-								and = ValueUtil.FALSE_VALUE;
-							} else {
-								and = ValueUtil.TRUE_VALUE;
-							}
-						}
-						if (and == ValueUtil.TRUE_VALUE) {
-							result = ValueUtil.TRUE_VALUE;
-						} else {
-							if (and == null) {
-								result = null;
-							} else {
-								result = ValueUtil.FALSE_VALUE;
-							}
-						}
-					}
-					CAUGHT_result = result;
-				} catch (Exception e) {
-					CAUGHT_result = ValueUtil.createInvalidValue(e);
-				}
-				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE
-						.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object) null, diagnostics, context,
-								(Object) null, severity_0, CAUGHT_result, TermsTables.INT_0)
-						.booleanValue();
-				local_0 = logDiagnostic;
-			}
-			return local_0;
-		} catch (Throwable e) {
-			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
-		}
+	public String getValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValue(String newValue) {
+		String oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TermsPackage.VARIABLE_DECLARATION__VALUE, oldValue,
+					value));
 	}
 
 	/**
@@ -396,6 +325,8 @@ public class VariableDeclarationImpl extends MinimalEObjectImpl.Container implem
 			if (resolve)
 				return getStep();
 			return basicGetStep();
+		case TermsPackage.VARIABLE_DECLARATION__VALUE:
+			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -419,6 +350,9 @@ public class VariableDeclarationImpl extends MinimalEObjectImpl.Container implem
 			return;
 		case TermsPackage.VARIABLE_DECLARATION__STEP:
 			setStep((InitializableType) newValue);
+			return;
+		case TermsPackage.VARIABLE_DECLARATION__VALUE:
+			setValue((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -444,6 +378,9 @@ public class VariableDeclarationImpl extends MinimalEObjectImpl.Container implem
 		case TermsPackage.VARIABLE_DECLARATION__STEP:
 			setStep((InitializableType) null);
 			return;
+		case TermsPackage.VARIABLE_DECLARATION__VALUE:
+			setValue(VALUE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -464,23 +401,10 @@ public class VariableDeclarationImpl extends MinimalEObjectImpl.Container implem
 			return variableDeclarationType != VARIABLE_DECLARATION_TYPE_EDEFAULT;
 		case TermsPackage.VARIABLE_DECLARATION__STEP:
 			return step != null;
+		case TermsPackage.VARIABLE_DECLARATION__VALUE:
+			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-		case TermsPackage.VARIABLE_DECLARATION___STEP_VAR_DECL_SET_STEP__DIAGNOSTICCHAIN_MAP:
-			return StepVarDeclSetStep((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -498,6 +422,8 @@ public class VariableDeclarationImpl extends MinimalEObjectImpl.Container implem
 		result.append(name);
 		result.append(", variableDeclarationType: ");
 		result.append(variableDeclarationType);
+		result.append(", value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}

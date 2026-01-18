@@ -2,17 +2,11 @@
  */
 package terms.impl;
 
-import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
-import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -24,32 +18,10 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.ocl.pivot.evaluation.Executor;
-
-import org.eclipse.ocl.pivot.ids.IdResolver;
-import org.eclipse.ocl.pivot.ids.TypeId;
-
-import org.eclipse.ocl.pivot.library.collection.CollectionAsSequenceOperation;
-
-import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
-
-import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
-import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
-
-import org.eclipse.ocl.pivot.utilities.PivotUtil;
-import org.eclipse.ocl.pivot.utilities.ValueUtil;
-
-import org.eclipse.ocl.pivot.values.IntegerValue;
-import org.eclipse.ocl.pivot.values.OrderedSetValue;
-import org.eclipse.ocl.pivot.values.SequenceValue;
-
-import org.eclipse.ocl.pivot.values.SequenceValue.Accumulator;
-
 import terms.Operator;
 import terms.Sort;
 import terms.Term;
 import terms.TermsPackage;
-import terms.TermsTables;
 
 /**
  * <!-- begin-user-doc -->
@@ -194,122 +166,6 @@ public abstract class OperatorImpl extends TermImpl implements Operator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean OperatorSort(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		final String constraintName = "Operator::OperatorSort";
-		try {
-			/**
-			 *
-			 * inv OperatorSort:
-			 *   let severity : Integer[1] = constraintName.getSeverity()
-			 *   in
-			 *     if severity <= 0
-			 *     then true
-			 *     else
-			 *       let result : Boolean[1] = self.sort = self.output
-			 *       in
-			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
-			 *     endif
-			 */
-			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this, context);
-			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor,
-					TermsPackage.Literals.OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP);
-			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE
-					.evaluate(executor, severity_0, TermsTables.INT_0).booleanValue();
-			/*@NonInvalid*/ boolean local_0;
-			if (le) {
-				local_0 = true;
-			} else {
-				final /*@NonInvalid*/ Sort sort = this.getSort();
-				final /*@NonInvalid*/ Sort output = this.getOutput();
-				final /*@NonInvalid*/ boolean result = sort.equals(output);
-				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE
-						.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object) null, diagnostics, context,
-								(Object) null, severity_0, result, TermsTables.INT_0)
-						.booleanValue();
-				local_0 = logDiagnostic;
-			}
-			return local_0;
-		} catch (Throwable e) {
-			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean OperatorInputType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		final String constraintName = "Operator::OperatorInputType";
-		try {
-			/**
-			 *
-			 * inv OperatorInputType:
-			 *   let severity : Integer[1] = constraintName.getSeverity()
-			 *   in
-			 *     if severity <= 0
-			 *     then true
-			 *     else
-			 *       let
-			 *         result : Boolean[1] = self.subterm->collect(subterm | subterm.sort) =
-			 *         self.input->asSequence()
-			 *       in
-			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
-			 *     endif
-			 */
-			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this, context);
-			final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor,
-					TermsPackage.Literals.OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP);
-			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE
-					.evaluate(executor, severity_0, TermsTables.INT_0).booleanValue();
-			/*@NonInvalid*/ boolean local_0;
-			if (le) {
-				local_0 = true;
-			} else {
-				final /*@NonInvalid*/ List<Term> subterm = this.getSubterm();
-				final /*@NonInvalid*/ OrderedSetValue BOXED_subterm = idResolver
-						.createOrderedSetOfAll(TermsTables.ORD_CLSSid_Term, subterm);
-				/*@Thrown*/ Accumulator accumulator = ValueUtil
-						.createSequenceAccumulatorValue(TermsTables.SEQ_CLSSid_Sort);
-				Iterator<Object> ITERATOR_subterm_0 = BOXED_subterm.iterator();
-				/*@NonInvalid*/ SequenceValue collect;
-				while (true) {
-					if (!ITERATOR_subterm_0.hasNext()) {
-						collect = accumulator;
-						break;
-					}
-					/*@NonInvalid*/ Term subterm_0 = (Term) ITERATOR_subterm_0.next();
-					/**
-					 * subterm.sort
-					 */
-					final /*@NonInvalid*/ Sort sort = subterm_0.getSort();
-					//
-					accumulator.add(sort);
-				}
-				final /*@NonInvalid*/ List<Sort> input = this.getInput();
-				final /*@NonInvalid*/ OrderedSetValue BOXED_input = idResolver
-						.createOrderedSetOfAll(TermsTables.ORD_CLSSid_Sort, input);
-				final /*@NonInvalid*/ SequenceValue asSequence = CollectionAsSequenceOperation.INSTANCE
-						.evaluate(BOXED_input);
-				final /*@NonInvalid*/ boolean result = collect.equals(asSequence);
-				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE
-						.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object) null, diagnostics, context,
-								(Object) null, severity_0, result, TermsTables.INT_0)
-						.booleanValue();
-				local_0 = logDiagnostic;
-			}
-			return local_0;
-		} catch (Throwable e) {
-			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -400,23 +256,6 @@ public abstract class OperatorImpl extends TermImpl implements Operator {
 			return input != null && !input.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-		case TermsPackage.OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP:
-			return OperatorSort((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
-		case TermsPackage.OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP:
-			return OperatorInputType((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //OperatorImpl

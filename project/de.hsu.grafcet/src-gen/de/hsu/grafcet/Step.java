@@ -12,5 +12,5 @@ package de.hsu.grafcet;
  * @model
  * @generated
  */
-public interface Step extends InitializableType {
+public interface Step extends InitializableType, HighlightableType {
 } // Step

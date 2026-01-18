@@ -2,10 +2,6 @@
  */
 package terms;
 
-import java.util.Map;
-
-import org.eclipse.emf.common.util.DiagnosticChain;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Integer Constant</b></em>'.
@@ -20,6 +16,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * @see terms.TermsPackage#getIntegerConstant()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='InputSizeOutputTypesIntConts'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot InputSizeOutputTypesIntConts='self.input-&gt;size() = 0 and self.output.oclIsTypeOf(_\'Integer\')'"
  * @generated
  */
 public interface IntegerConstant extends Constant {
@@ -44,13 +41,5 @@ public interface IntegerConstant extends Constant {
 	 * @generated
 	 */
 	void setValue(int value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.input-&gt;size() = 0 and self.output.oclIsTypeOf(_\'Integer\')'"
-	 * @generated
-	 */
-	boolean InputSizeOutputTypesIntConts(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // IntegerConstant

@@ -4,7 +4,6 @@ package de.hsu.grafcet.impl;
 
 import de.hsu.grafcet.GrafcetPackage;
 import de.hsu.grafcet.HighlightableType;
-import de.hsu.grafcet.Step;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,18 +13,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Step</b></em>'.
+ * An implementation of the model object '<em><b>Highlightable Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.hsu.grafcet.impl.StepImpl#isHighlight <em>Highlight</em>}</li>
+ *   <li>{@link de.hsu.grafcet.impl.HighlightableTypeImpl#isHighlight <em>Highlight</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class StepImpl extends InitializableTypeImpl implements Step {
+public class HighlightableTypeImpl extends NodeImpl implements HighlightableType {
 	/**
 	 * The default value of the '{@link #isHighlight() <em>Highlight</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -51,7 +50,7 @@ public class StepImpl extends InitializableTypeImpl implements Step {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StepImpl() {
+	protected HighlightableTypeImpl() {
 		super();
 	}
 
@@ -62,7 +61,7 @@ public class StepImpl extends InitializableTypeImpl implements Step {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return GrafcetPackage.Literals.STEP;
+		return GrafcetPackage.Literals.HIGHLIGHTABLE_TYPE;
 	}
 
 	/**
@@ -83,8 +82,8 @@ public class StepImpl extends InitializableTypeImpl implements Step {
 		boolean oldHighlight = highlight;
 		highlight = newHighlight;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GrafcetPackage.STEP__HIGHLIGHT, oldHighlight,
-					highlight));
+			eNotify(new ENotificationImpl(this, Notification.SET, GrafcetPackage.HIGHLIGHTABLE_TYPE__HIGHLIGHT,
+					oldHighlight, highlight));
 	}
 
 	/**
@@ -95,7 +94,7 @@ public class StepImpl extends InitializableTypeImpl implements Step {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case GrafcetPackage.STEP__HIGHLIGHT:
+		case GrafcetPackage.HIGHLIGHTABLE_TYPE__HIGHLIGHT:
 			return isHighlight();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -109,7 +108,7 @@ public class StepImpl extends InitializableTypeImpl implements Step {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case GrafcetPackage.STEP__HIGHLIGHT:
+		case GrafcetPackage.HIGHLIGHTABLE_TYPE__HIGHLIGHT:
 			setHighlight((Boolean) newValue);
 			return;
 		}
@@ -124,7 +123,7 @@ public class StepImpl extends InitializableTypeImpl implements Step {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case GrafcetPackage.STEP__HIGHLIGHT:
+		case GrafcetPackage.HIGHLIGHTABLE_TYPE__HIGHLIGHT:
 			setHighlight(HIGHLIGHT_EDEFAULT);
 			return;
 		}
@@ -139,46 +138,10 @@ public class StepImpl extends InitializableTypeImpl implements Step {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case GrafcetPackage.STEP__HIGHLIGHT:
+		case GrafcetPackage.HIGHLIGHTABLE_TYPE__HIGHLIGHT:
 			return highlight != HIGHLIGHT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == HighlightableType.class) {
-			switch (derivedFeatureID) {
-			case GrafcetPackage.STEP__HIGHLIGHT:
-				return GrafcetPackage.HIGHLIGHTABLE_TYPE__HIGHLIGHT;
-			default:
-				return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == HighlightableType.class) {
-			switch (baseFeatureID) {
-			case GrafcetPackage.HIGHLIGHTABLE_TYPE__HIGHLIGHT:
-				return GrafcetPackage.STEP__HIGHLIGHT;
-			default:
-				return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**
@@ -198,4 +161,4 @@ public class StepImpl extends InitializableTypeImpl implements Step {
 		return result.toString();
 	}
 
-} //StepImpl
+} //HighlightableTypeImpl

@@ -101,6 +101,8 @@ public class GrafcetFactoryImpl extends EFactoryImpl implements GrafcetFactory {
 			return createTimeCondition();
 		case GrafcetPackage.CONDITION:
 			return createCondition();
+		case GrafcetPackage.HIGHLIGHTABLE_TYPE:
+			return createHighlightableType();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -370,6 +372,16 @@ public class GrafcetFactoryImpl extends EFactoryImpl implements GrafcetFactory {
 	public Condition createCondition() {
 		ConditionImpl condition = new ConditionImpl();
 		return condition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HighlightableType createHighlightableType() {
+		HighlightableTypeImpl highlightableType = new HighlightableTypeImpl();
+		return highlightableType;
 	}
 
 	/**

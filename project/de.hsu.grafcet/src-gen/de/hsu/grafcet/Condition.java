@@ -2,10 +2,6 @@
  */
 package de.hsu.grafcet;
 
-import java.util.Map;
-
-import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EObject;
 
 import terms.Term;
@@ -23,7 +19,8 @@ import terms.Term;
  * </ul>
  *
  * @see de.hsu.grafcet.GrafcetPackage#getCondition()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ConditionVariableType'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ConditionTermType ConditionVariableType'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot ConditionTermType='self.term &lt;&gt; null implies self.term.sort.oclIsTypeOf(terms::Bool)' ConditionVariableType='self.term &lt;&gt; null implies(if self.term.oclIsTypeOf(terms::Variable) then \n\t\t\tself.term.oclAsType(terms::Variable).variableDeclaration.variableDeclarationType &lt;&gt; terms::VariableDeclarationType::output else\n\t\t\tself.term.oclAsType(terms::Operator)-&gt;closure(term: terms::Term| term-&gt;selectByKind(terms::Operator).subterm)\n\t\t\t-&gt;selectByKind(terms::Variable)-&gt;select(var|var.variableDeclaration.variableDeclarationType = terms::VariableDeclarationType::output)-&gt;size() = 0\n\t\t\tendif)'"
  * @generated
  */
 public interface Condition extends EObject {
@@ -48,21 +45,5 @@ public interface Condition extends EObject {
 	 * @generated
 	 */
 	void setTerm(Term value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.term &lt;&gt; null implies self.term.sort.oclIsTypeOf(terms::Bool)'"
-	 * @generated
-	 */
-	boolean ConditionTermType(DiagnosticChain diagnostics, Map<Object, Object> context);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.term &lt;&gt; null implies(if self.term.oclIsTypeOf(terms::Variable) then \n\t\t\tself.term.oclAsType(terms::Variable).variableDeclaration.variableDeclarationType &lt;&gt; terms::VariableDeclarationType::output else\n\t\t\tself.term.oclAsType(terms::Operator)-&gt;closure(term: terms::Term| term-&gt;selectByKind(terms::Operator).subterm)\n\t\t\t-&gt;selectByKind(terms::Variable)-&gt;select(var|var.variableDeclaration.variableDeclarationType = terms::VariableDeclarationType::output)-&gt;size() = 0\n\t\t\tendif)'"
-	 * @generated
-	 */
-	boolean ConditionVariableType(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Condition

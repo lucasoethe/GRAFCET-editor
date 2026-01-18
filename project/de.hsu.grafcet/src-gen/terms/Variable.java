@@ -2,10 +2,6 @@
  */
 package terms;
 
-import java.util.Map;
-
-import org.eclipse.emf.common.util.DiagnosticChain;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Variable</b></em>'.
@@ -20,6 +16,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  * @see terms.TermsPackage#getVariable()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='SortVariable'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot SortVariable='self.sort = self.variableDeclaration.sort'"
  * @generated
  */
 public interface Variable extends Term {
@@ -44,13 +41,5 @@ public interface Variable extends Term {
 	 * @generated
 	 */
 	void setVariableDeclaration(VariableDeclaration value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.sort = self.variableDeclaration.sort'"
-	 * @generated
-	 */
-	boolean SortVariable(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Variable

@@ -17,6 +17,7 @@ import de.hsu.grafcet.ForcingOrderType;
 import de.hsu.grafcet.Grafcet;
 import de.hsu.grafcet.GrafcetFactory;
 import de.hsu.grafcet.GrafcetPackage;
+import de.hsu.grafcet.HighlightableType;
 import de.hsu.grafcet.InitializableType;
 import de.hsu.grafcet.Macrostep;
 import de.hsu.grafcet.MacrostepExpansion;
@@ -37,8 +38,6 @@ import de.hsu.grafcet.util.GrafcetValidator;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
@@ -209,6 +208,13 @@ public class GrafcetPackageImpl extends EPackageImpl implements GrafcetPackage {
 	 * @generated
 	 */
 	private EClass conditionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass highlightableTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -716,15 +722,6 @@ public class GrafcetPackageImpl extends EPackageImpl implements GrafcetPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAction__ActionOutputVariableType__DiagnosticChain_Map() {
-		return actionEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getStoredAction() {
 		return storedActionEClass;
 	}
@@ -752,24 +749,6 @@ public class GrafcetPackageImpl extends EPackageImpl implements GrafcetPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getStoredAction__StoredActionCondType__DiagnosticChain_Map() {
-		return storedActionEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getStoredAction__StoredActionVarType__DiagnosticChain_Map() {
-		return storedActionEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getContinuousAction() {
 		return continuousActionEClass;
 	}
@@ -781,24 +760,6 @@ public class GrafcetPackageImpl extends EPackageImpl implements GrafcetPackage {
 	 */
 	public EAttribute getContinuousAction_ContinuousActionType() {
 		return (EAttribute) continuousActionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getContinuousAction__ContinuousActionCondType__DiagnosticChain_Map() {
-		return continuousActionEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getContinuousAction__ContinuousActionVarType__DiagnosticChain_Map() {
-		return continuousActionEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -896,8 +857,8 @@ public class GrafcetPackageImpl extends EPackageImpl implements GrafcetPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCondition__ConditionTermType__DiagnosticChain_Map() {
-		return conditionEClass.getEOperations().get(0);
+	public EClass getHighlightableType() {
+		return highlightableTypeEClass;
 	}
 
 	/**
@@ -905,8 +866,8 @@ public class GrafcetPackageImpl extends EPackageImpl implements GrafcetPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCondition__ConditionVariableType__DiagnosticChain_Map() {
-		return conditionEClass.getEOperations().get(1);
+	public EAttribute getHighlightableType_Highlight() {
+		return (EAttribute) highlightableTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1042,18 +1003,13 @@ public class GrafcetPackageImpl extends EPackageImpl implements GrafcetPackage {
 
 		actionEClass = createEClass(ACTION);
 		createEReference(actionEClass, ACTION__VARIABLE);
-		createEOperation(actionEClass, ACTION___ACTION_OUTPUT_VARIABLE_TYPE__DIAGNOSTICCHAIN_MAP);
 
 		storedActionEClass = createEClass(STORED_ACTION);
 		createEAttribute(storedActionEClass, STORED_ACTION__STORED_ACTION_TYPE);
 		createEReference(storedActionEClass, STORED_ACTION__VALUE);
-		createEOperation(storedActionEClass, STORED_ACTION___STORED_ACTION_COND_TYPE__DIAGNOSTICCHAIN_MAP);
-		createEOperation(storedActionEClass, STORED_ACTION___STORED_ACTION_VAR_TYPE__DIAGNOSTICCHAIN_MAP);
 
 		continuousActionEClass = createEClass(CONTINUOUS_ACTION);
 		createEAttribute(continuousActionEClass, CONTINUOUS_ACTION__CONTINUOUS_ACTION_TYPE);
-		createEOperation(continuousActionEClass, CONTINUOUS_ACTION___CONTINUOUS_ACTION_COND_TYPE__DIAGNOSTICCHAIN_MAP);
-		createEOperation(continuousActionEClass, CONTINUOUS_ACTION___CONTINUOUS_ACTION_VAR_TYPE__DIAGNOSTICCHAIN_MAP);
 
 		actionLinkEClass = createEClass(ACTION_LINK);
 		createEReference(actionLinkEClass, ACTION_LINK__STEP);
@@ -1067,8 +1023,9 @@ public class GrafcetPackageImpl extends EPackageImpl implements GrafcetPackage {
 
 		conditionEClass = createEClass(CONDITION);
 		createEReference(conditionEClass, CONDITION__TERM);
-		createEOperation(conditionEClass, CONDITION___CONDITION_TERM_TYPE__DIAGNOSTICCHAIN_MAP);
-		createEOperation(conditionEClass, CONDITION___CONDITION_VARIABLE_TYPE__DIAGNOSTICCHAIN_MAP);
+
+		highlightableTypeEClass = createEClass(HIGHLIGHTABLE_TYPE);
+		createEAttribute(highlightableTypeEClass, HIGHLIGHTABLE_TYPE__HIGHLIGHT);
 
 		// Create enums
 		forcingOrderTypeEEnum = createEEnum(FORCING_ORDER_TYPE);
@@ -1115,6 +1072,7 @@ public class GrafcetPackageImpl extends EPackageImpl implements GrafcetPackage {
 		initializableTypeEClass.getESuperTypes().add(this.getNode());
 		enclosingStepEClass.getESuperTypes().add(this.getInitializableType());
 		stepEClass.getESuperTypes().add(this.getInitializableType());
+		stepEClass.getESuperTypes().add(this.getHighlightableType());
 		transitionEClass.getESuperTypes().add(this.getNode());
 		transitionEClass.getESuperTypes().add(this.getTimeCondition());
 		synchronizationEClass.getESuperTypes().add(this.getNode());
@@ -1128,6 +1086,7 @@ public class GrafcetPackageImpl extends EPackageImpl implements GrafcetPackage {
 		continuousActionEClass.getESuperTypes().add(this.getAction());
 		continuousActionEClass.getESuperTypes().add(this.getTimeCondition());
 		timeConditionEClass.getESuperTypes().add(this.getCondition());
+		highlightableTypeEClass.getESuperTypes().add(this.getNode());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(grafcetEClass, Grafcet.class, "Grafcet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1252,16 +1211,6 @@ public class GrafcetPackageImpl extends EPackageImpl implements GrafcetPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getAction__ActionOutputVariableType__DiagnosticChain_Map(),
-				ecorePackage.getEBoolean(), "ActionOutputVariableType", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
-		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(storedActionEClass, StoredAction.class, "StoredAction", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStoredAction_StoredActionType(), this.getStoredActionType(), "storedActionType", "activation",
@@ -1271,51 +1220,11 @@ public class GrafcetPackageImpl extends EPackageImpl implements GrafcetPackage {
 				StoredAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getStoredAction__StoredActionCondType__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
-				"StoredActionCondType", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getStoredAction__StoredActionVarType__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
-				"StoredActionVarType", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(continuousActionEClass, ContinuousAction.class, "ContinuousAction", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContinuousAction_ContinuousActionType(), this.getContinuousActionType(),
 				"continuousActionType", "continuousAction", 0, 1, ContinuousAction.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		op = initEOperation(getContinuousAction__ContinuousActionCondType__DiagnosticChain_Map(),
-				ecorePackage.getEBoolean(), "ContinuousActionCondType", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getContinuousAction__ContinuousActionVarType__DiagnosticChain_Map(),
-				ecorePackage.getEBoolean(), "ContinuousActionVarType", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(actionLinkEClass, ActionLink.class, "ActionLink", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1346,25 +1255,11 @@ public class GrafcetPackageImpl extends EPackageImpl implements GrafcetPackage {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getCondition__ConditionTermType__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
-				"ConditionTermType", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getCondition__ConditionVariableType__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
-				"ConditionVariableType", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEClass(highlightableTypeEClass, HighlightableType.class, "HighlightableType", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getHighlightableType_Highlight(), ecorePackage.getEBoolean(), "highlight", "false", 1, 1,
+				HighlightableType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(forcingOrderTypeEEnum, ForcingOrderType.class, "ForcingOrderType");
@@ -1396,10 +1291,24 @@ public class GrafcetPackageImpl extends EPackageImpl implements GrafcetPackage {
 		createResource(eNS_URI);
 
 		// Create annotations
+		// http://www.eclipse.org/OCL/Import
+		createImportAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
 		createPivotAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/OCL/Import</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createImportAnnotations() {
+		String source = "http://www.eclipse.org/OCL/Import";
+		addAnnotation(this, source,
+				new String[] { "ecore", "http://www.eclipse.org/emf/2002/Ecore", "terms", "terms.ecore#/" });
 	}
 
 	/**
@@ -1410,11 +1319,17 @@ public class GrafcetPackageImpl extends EPackageImpl implements GrafcetPackage {
 	 */
 	protected void createEcoreAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore";
-		addAnnotation(this, source, new String[] {});
+		addAnnotation(this, source,
+				new String[] { "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+						"settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "validationDelegates",
+						"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot" });
 		addAnnotation(actionEClass, source, new String[] { "constraints", "ActionOutputVariableType" });
-		addAnnotation(storedActionEClass, source, new String[] { "constraints", "StoredActionVarType" });
-		addAnnotation(continuousActionEClass, source, new String[] { "constraints", "ContinuousActionVarType" });
-		addAnnotation(conditionEClass, source, new String[] { "constraints", "ConditionVariableType" });
+		addAnnotation(storedActionEClass, source,
+				new String[] { "constraints", "StoredActionVarType StoredActionCondType" });
+		addAnnotation(continuousActionEClass, source,
+				new String[] { "constraints", "ContinuousActionVarType ContinuousActionCondType" });
+		addAnnotation(conditionEClass, source,
+				new String[] { "constraints", "ConditionTermType ConditionVariableType" });
 	}
 
 	/**
@@ -1425,20 +1340,16 @@ public class GrafcetPackageImpl extends EPackageImpl implements GrafcetPackage {
 	 */
 	protected void createPivotAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
-		addAnnotation(getAction__ActionOutputVariableType__DiagnosticChain_Map(), source, new String[] { "body",
+		addAnnotation(actionEClass, source, new String[] { "ActionOutputVariableType",
 				"self.variable.variableDeclaration.variableDeclarationType = terms::VariableDeclarationType::output \n\t\t\tor if self.oclIsTypeOf(StoredAction) then \n\t\t\tself.variable.variableDeclaration.variableDeclarationType = terms::VariableDeclarationType::internal else false endif" });
-		addAnnotation(getStoredAction__StoredActionCondType__DiagnosticChain_Map(), source, new String[] { "body",
+		addAnnotation(storedActionEClass, source, new String[] { "StoredActionVarType",
+				"self.variable.variableDeclaration.sort.oclType() = self.value.sort.oclType()", "StoredActionCondType",
 				"\n\t\t\tself.storedActionType = grafcet::StoredActionType::event implies(\n\t\t\tif self.term.oclIsTypeOf(terms::Variable) then false else\n\t\t\tself.term.oclAsType(terms::Operator)->closure(term: terms::Term| term->selectByKind(terms::Operator).subterm)\n\t\t\t->select(operator|operator.oclIsTypeOf(terms::RisingEdge))->size()\n\t\t\t+ self.term.oclAsType(terms::Operator)->closure(term: terms::Term| term->selectByKind(terms::Operator).subterm)\n\t\t\t->select(operator|operator.oclIsTypeOf(terms::FallingEdge))->size() > 0\n\t\t\tendif)" });
-		addAnnotation(getStoredAction__StoredActionVarType__DiagnosticChain_Map(), source, new String[] { "body",
-				"self.variable.variableDeclaration.sort.oclType() = self.value.sort.oclType()" });
-		addAnnotation(getContinuousAction__ContinuousActionCondType__DiagnosticChain_Map(), source, new String[] {
-				"body",
+		addAnnotation(continuousActionEClass, source, new String[] { "ContinuousActionVarType",
+				"self.variable.variableDeclaration.sort.oclIsTypeOf(terms::Bool)", "ContinuousActionCondType",
 				"\n\t\t\tif self.continuousActionType = grafcet::ContinuousActionType::assignationCondition then\n\t\t\tif self.term.oclIsTypeOf(terms::Variable) then true else\n\t\t\t\tself.term.oclAsType(terms::Operator)->closure(term: terms::Term| term->selectByKind(terms::Operator).subterm)\n\t\t\t\t\t->select(operator|operator.oclIsTypeOf(terms::RisingEdge))->size()\n\t\t\t\t+ self.term.oclAsType(terms::Operator)->closure(term: terms::Term| term->selectByKind(terms::Operator).subterm)\n\t\t\t\t\t->select(operator|operator.oclIsTypeOf(terms::FallingEdge))->size() = 0\n\t\t\tendif\n\t\t\telse true endif" });
-		addAnnotation(getContinuousAction__ContinuousActionVarType__DiagnosticChain_Map(), source,
-				new String[] { "body", "self.variable.variableDeclaration.sort.oclIsTypeOf(terms::Bool)" });
-		addAnnotation(getCondition__ConditionTermType__DiagnosticChain_Map(), source,
-				new String[] { "body", "self.term <> null implies self.term.sort.oclIsTypeOf(terms::Bool)" });
-		addAnnotation(getCondition__ConditionVariableType__DiagnosticChain_Map(), source, new String[] { "body",
+		addAnnotation(conditionEClass, source, new String[] { "ConditionTermType",
+				"self.term <> null implies self.term.sort.oclIsTypeOf(terms::Bool)", "ConditionVariableType",
 				"self.term <> null implies(if self.term.oclIsTypeOf(terms::Variable) then \n\t\t\tself.term.oclAsType(terms::Variable).variableDeclaration.variableDeclarationType <> terms::VariableDeclarationType::output else\n\t\t\tself.term.oclAsType(terms::Operator)->closure(term: terms::Term| term->selectByKind(terms::Operator).subterm)\n\t\t\t->selectByKind(terms::Variable)->select(var|var.variableDeclaration.variableDeclarationType = terms::VariableDeclarationType::output)->size() = 0\n\t\t\tendif)" });
 	}
 

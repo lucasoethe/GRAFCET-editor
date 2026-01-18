@@ -2,10 +2,6 @@
  */
 package de.hsu.grafcet;
 
-import java.util.Map;
-
-import org.eclipse.emf.common.util.DiagnosticChain;
-
 import terms.Term;
 
 /**
@@ -22,7 +18,8 @@ import terms.Term;
  * </ul>
  *
  * @see de.hsu.grafcet.GrafcetPackage#getStoredAction()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='StoredActionVarType'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='StoredActionVarType StoredActionCondType'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot StoredActionVarType='self.variable.variableDeclaration.sort.oclType() = self.value.sort.oclType()' StoredActionCondType='\n\t\t\tself.storedActionType = grafcet::StoredActionType::event implies(\n\t\t\tif self.term.oclIsTypeOf(terms::Variable) then false else\n\t\t\tself.term.oclAsType(terms::Operator)-&gt;closure(term: terms::Term| term-&gt;selectByKind(terms::Operator).subterm)\n\t\t\t-&gt;select(operator|operator.oclIsTypeOf(terms::RisingEdge))-&gt;size()\n\t\t\t+ self.term.oclAsType(terms::Operator)-&gt;closure(term: terms::Term| term-&gt;selectByKind(terms::Operator).subterm)\n\t\t\t-&gt;select(operator|operator.oclIsTypeOf(terms::FallingEdge))-&gt;size() &gt; 0\n\t\t\tendif)'"
  * @generated
  */
 public interface StoredAction extends Action, Condition {
@@ -73,21 +70,5 @@ public interface StoredAction extends Action, Condition {
 	 * @generated
 	 */
 	void setValue(Term value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\tself.storedActionType = grafcet::StoredActionType::event implies(\n\t\t\tif self.term.oclIsTypeOf(terms::Variable) then false else\n\t\t\tself.term.oclAsType(terms::Operator)-&gt;closure(term: terms::Term| term-&gt;selectByKind(terms::Operator).subterm)\n\t\t\t-&gt;select(operator|operator.oclIsTypeOf(terms::RisingEdge))-&gt;size()\n\t\t\t+ self.term.oclAsType(terms::Operator)-&gt;closure(term: terms::Term| term-&gt;selectByKind(terms::Operator).subterm)\n\t\t\t-&gt;select(operator|operator.oclIsTypeOf(terms::FallingEdge))-&gt;size() &gt; 0\n\t\t\tendif)'"
-	 * @generated
-	 */
-	boolean StoredActionCondType(DiagnosticChain diagnostics, Map<Object, Object> context);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.variable.variableDeclaration.sort.oclType() = self.value.sort.oclType()'"
-	 * @generated
-	 */
-	boolean StoredActionVarType(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // StoredAction

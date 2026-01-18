@@ -4,44 +4,16 @@ package de.hsu.grafcet.impl;
 
 import de.hsu.grafcet.Action;
 import de.hsu.grafcet.GrafcetPackage;
-import de.hsu.grafcet.GrafcetTables;
-
-import java.lang.reflect.InvocationTargetException;
-
-import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.ocl.pivot.evaluation.Executor;
-
-import org.eclipse.ocl.pivot.ids.EnumerationLiteralId;
-import org.eclipse.ocl.pivot.ids.IdResolver;
-import org.eclipse.ocl.pivot.ids.TypeId;
-
-import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsTypeOfOperation;
-import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
-
-import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
-import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
-
-import org.eclipse.ocl.pivot.utilities.ClassUtil;
-import org.eclipse.ocl.pivot.utilities.PivotUtil;
-import org.eclipse.ocl.pivot.utilities.ValueUtil;
-
-import org.eclipse.ocl.pivot.values.IntegerValue;
-
 import terms.Variable;
-import terms.VariableDeclaration;
-import terms.VariableDeclarationType;
 
 /**
  * <!-- begin-user-doc -->
@@ -141,83 +113,6 @@ public class ActionImpl extends ActionTypeImpl implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean ActionOutputVariableType(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-		final String constraintName = "Action::ActionOutputVariableType";
-		try {
-			/**
-			 *
-			 * inv ActionOutputVariableType:
-			 *   let severity : Integer[1] = constraintName.getSeverity()
-			 *   in
-			 *     if severity <= 0
-			 *     then true
-			 *     else
-			 *       let result : Boolean[?] = self.variable.variableDeclaration.variableDeclarationType = terms::VariableDeclarationType::output or
-			 *         if self.oclIsTypeOf(StoredAction)
-			 *         then self.variable.variableDeclaration.variableDeclarationType = terms::VariableDeclarationType::internal
-			 *         else false
-			 *         endif
-			 *       in
-			 *         constraintName.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
-			 *     endif
-			 */
-			final /*@NonInvalid*/ Executor executor = PivotUtil.getExecutor(this, context);
-			final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
-			final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor,
-					GrafcetPackage.Literals.ACTION___ACTION_OUTPUT_VARIABLE_TYPE__DIAGNOSTICCHAIN_MAP);
-			final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE
-					.evaluate(executor, severity_0, GrafcetTables.INT_0).booleanValue();
-			/*@NonInvalid*/ boolean local_1;
-			if (le) {
-				local_1 = true;
-			} else {
-				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_grafcet_c_c_StoredAction = idResolver
-						.getClass(GrafcetTables.CLSSid_StoredAction, null);
-				final /*@NonInvalid*/ Variable variable = this.getVariable();
-				final /*@NonInvalid*/ VariableDeclaration variableDeclaration = variable.getVariableDeclaration();
-				final /*@NonInvalid*/ VariableDeclarationType variableDeclarationType = variableDeclaration
-						.getVariableDeclarationType();
-				final /*@NonInvalid*/ EnumerationLiteralId BOXED_variableDeclarationType = variableDeclarationType == null
-						? null
-						: GrafcetTables.ENUMid_VariableDeclarationType
-								.getEnumerationLiteralId(ClassUtil.nonNullState(variableDeclarationType.getName()));
-				final /*@NonInvalid*/ boolean eq = BOXED_variableDeclarationType == GrafcetTables.ELITid_output;
-				final /*@NonInvalid*/ Boolean result;
-				if (eq) {
-					result = ValueUtil.TRUE_VALUE;
-				} else {
-					final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE
-							.evaluate(executor, this, TYP_grafcet_c_c_StoredAction).booleanValue();
-					/*@NonInvalid*/ boolean local_0;
-					if (oclIsTypeOf) {
-						final /*@NonInvalid*/ boolean eq_0 = BOXED_variableDeclarationType == GrafcetTables.ELITid_internal;
-						local_0 = eq_0;
-					} else {
-						local_0 = false;
-					}
-					if (local_0) {
-						result = ValueUtil.TRUE_VALUE;
-					} else {
-						result = ValueUtil.FALSE_VALUE;
-					}
-				}
-				final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE
-						.evaluate(executor, TypeId.BOOLEAN, constraintName, this, (Object) null, diagnostics, context,
-								(Object) null, severity_0, result, GrafcetTables.INT_0)
-						.booleanValue();
-				local_1 = logDiagnostic;
-			}
-			return local_1;
-		} catch (Throwable e) {
-			return ValueUtil.validationFailedDiagnostic(constraintName, this, diagnostics, context, e);
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -283,21 +178,6 @@ public class ActionImpl extends ActionTypeImpl implements Action {
 			return variable != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-		case GrafcetPackage.ACTION___ACTION_OUTPUT_VARIABLE_TYPE__DIAGNOSTICCHAIN_MAP:
-			return ActionOutputVariableType((DiagnosticChain) arguments.get(0), (Map<Object, Object>) arguments.get(1));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 } //ActionImpl

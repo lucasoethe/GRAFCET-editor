@@ -220,6 +220,15 @@ public interface GrafcetFactory extends EFactory {
 	Condition createCondition();
 
 	/**
+	 * Returns a new object of class '<em>Highlightable Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Highlightable Type</em>'.
+	 * @generated
+	 */
+	HighlightableType createHighlightableType();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

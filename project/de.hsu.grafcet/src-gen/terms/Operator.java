@@ -2,9 +2,6 @@
  */
 package terms;
 
-import java.util.Map;
-
-import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -23,7 +20,8 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see terms.TermsPackage#getOperator()
  * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OperatorInputType'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OperatorSort OperatorInputType'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot OperatorSort='self.sort = self.output' OperatorInputType='self.subterm-&gt;collect(subterm|subterm.sort) = self.input-&gt;asSequence()'"
  * @generated
  */
 public interface Operator extends Term {
@@ -72,21 +70,5 @@ public interface Operator extends Term {
 	 * @generated
 	 */
 	EList<Sort> getInput();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.sort = self.output'"
-	 * @generated
-	 */
-	boolean OperatorSort(DiagnosticChain diagnostics, Map<Object, Object> context);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.subterm-&gt;collect(subterm|subterm.sort) = self.input-&gt;asSequence()'"
-	 * @generated
-	 */
-	boolean OperatorInputType(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // Operator

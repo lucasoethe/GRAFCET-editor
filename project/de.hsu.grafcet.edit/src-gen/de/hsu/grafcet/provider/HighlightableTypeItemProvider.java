@@ -3,7 +3,7 @@
 package de.hsu.grafcet.provider;
 
 import de.hsu.grafcet.GrafcetPackage;
-import de.hsu.grafcet.Step;
+import de.hsu.grafcet.HighlightableType;
 
 import java.util.Collection;
 import java.util.List;
@@ -17,19 +17,19 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link de.hsu.grafcet.Step} object.
+ * This is the item provider adapter for a {@link de.hsu.grafcet.HighlightableType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class StepItemProvider extends InitializableTypeItemProvider {
+public class HighlightableTypeItemProvider extends NodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StepItemProvider(AdapterFactory adapterFactory) {
+	public HighlightableTypeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -66,14 +66,14 @@ public class StepItemProvider extends InitializableTypeItemProvider {
 	}
 
 	/**
-	 * This returns Step.gif.
+	 * This returns HighlightableType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Step"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/HighlightableType"));
 	}
 
 	/**
@@ -94,8 +94,8 @@ public class StepItemProvider extends InitializableTypeItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		Step step = (Step) object;
-		return getString("_UI_Step_type") + " " + step.getId();
+		HighlightableType highlightableType = (HighlightableType) object;
+		return getString("_UI_HighlightableType_type") + " " + highlightableType.getId();
 	}
 
 	/**
@@ -109,8 +109,8 @@ public class StepItemProvider extends InitializableTypeItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Step.class)) {
-		case GrafcetPackage.STEP__HIGHLIGHT:
+		switch (notification.getFeatureID(HighlightableType.class)) {
+		case GrafcetPackage.HIGHLIGHTABLE_TYPE__HIGHLIGHT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

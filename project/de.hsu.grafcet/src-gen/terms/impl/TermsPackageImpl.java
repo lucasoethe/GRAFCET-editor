@@ -9,8 +9,6 @@ import de.hsu.grafcet.impl.GrafcetPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
@@ -341,15 +339,6 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getVariable__SortVariable__DiagnosticChain_Map() {
-		return variableEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getVariableDeclaration() {
 		return variableDeclarationEClass;
 	}
@@ -395,8 +384,8 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getVariableDeclaration__StepVarDeclSetStep__DiagnosticChain_Map() {
-		return variableDeclarationEClass.getEOperations().get(0);
+	public EAttribute getVariableDeclaration_Value() {
+		return (EAttribute) variableDeclarationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -433,24 +422,6 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 	 */
 	public EReference getOperator_Input() {
 		return (EReference) operatorEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getOperator__OperatorSort__DiagnosticChain_Map() {
-		return operatorEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getOperator__OperatorInputType__DiagnosticChain_Map() {
-		return operatorEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -512,26 +483,8 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBooleanOperator__InputOutputTypesBoolOp__DiagnosticChain_Map() {
-		return booleanOperatorEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getAnd() {
 		return andEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getAnd__InputSizeAnd__DiagnosticChain_Map() {
-		return andEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -548,15 +501,6 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getOr__InputSizeOr__DiagnosticChain_Map() {
-		return orEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getNot() {
 		return notEClass;
 	}
@@ -566,26 +510,8 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getNot__InputSizeNot__DiagnosticChain_Map() {
-		return notEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getEquality() {
 		return equalityEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getEquality__InputSizeInputOutputTypesEq__DiagnosticChain_Map() {
-		return equalityEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -611,26 +537,8 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBooleanConstant__InputSizeOutputTypesBoolConst__DiagnosticChain_Map() {
-		return booleanConstantEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getIntegerOperator() {
 		return integerOperatorEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getIntegerOperator__InputSizeTypesIntOp__DiagnosticChain_Map() {
-		return integerOperatorEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -647,26 +555,8 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAddition__OutputTypesAdd__DiagnosticChain_Map() {
-		return additionEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getSubstraction() {
 		return substractionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getSubstraction__OutputTypesSubstr__DiagnosticChain_Map() {
-		return substractionEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -683,26 +573,8 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getGreaterThan__OutputTypesGreat__DiagnosticChain_Map() {
-		return greaterThanEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getLessThan() {
 		return lessThanEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getLessThan__OutputTypesLess__DiagnosticChain_Map() {
-		return lessThanEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -728,15 +600,6 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIntegerConstant__InputSizeOutputTypesIntConts__DiagnosticChain_Map() {
-		return integerConstantEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getRisingEdge() {
 		return risingEdgeEClass;
 	}
@@ -746,26 +609,8 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getRisingEdge__InputSizeRisingEdge__DiagnosticChain_Map() {
-		return risingEdgeEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getFallingEdge() {
 		return fallingEdgeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getFallingEdge__InputSizeFallingEdge__DiagnosticChain_Map() {
-		return fallingEdgeEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -812,21 +657,18 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 
 		variableEClass = createEClass(VARIABLE);
 		createEReference(variableEClass, VARIABLE__VARIABLE_DECLARATION);
-		createEOperation(variableEClass, VARIABLE___SORT_VARIABLE__DIAGNOSTICCHAIN_MAP);
 
 		variableDeclarationEClass = createEClass(VARIABLE_DECLARATION);
 		createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__SORT);
 		createEAttribute(variableDeclarationEClass, VARIABLE_DECLARATION__NAME);
 		createEAttribute(variableDeclarationEClass, VARIABLE_DECLARATION__VARIABLE_DECLARATION_TYPE);
 		createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__STEP);
-		createEOperation(variableDeclarationEClass, VARIABLE_DECLARATION___STEP_VAR_DECL_SET_STEP__DIAGNOSTICCHAIN_MAP);
+		createEAttribute(variableDeclarationEClass, VARIABLE_DECLARATION__VALUE);
 
 		operatorEClass = createEClass(OPERATOR);
 		createEReference(operatorEClass, OPERATOR__SUBTERM);
 		createEReference(operatorEClass, OPERATOR__OUTPUT);
 		createEReference(operatorEClass, OPERATOR__INPUT);
-		createEOperation(operatorEClass, OPERATOR___OPERATOR_SORT__DIAGNOSTICCHAIN_MAP);
-		createEOperation(operatorEClass, OPERATOR___OPERATOR_INPUT_TYPE__DIAGNOSTICCHAIN_MAP);
 
 		constantEClass = createEClass(CONSTANT);
 
@@ -838,50 +680,34 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 		integerEClass = createEClass(INTEGER);
 
 		booleanOperatorEClass = createEClass(BOOLEAN_OPERATOR);
-		createEOperation(booleanOperatorEClass, BOOLEAN_OPERATOR___INPUT_OUTPUT_TYPES_BOOL_OP__DIAGNOSTICCHAIN_MAP);
 
 		andEClass = createEClass(AND);
-		createEOperation(andEClass, AND___INPUT_SIZE_AND__DIAGNOSTICCHAIN_MAP);
 
 		orEClass = createEClass(OR);
-		createEOperation(orEClass, OR___INPUT_SIZE_OR__DIAGNOSTICCHAIN_MAP);
 
 		notEClass = createEClass(NOT);
-		createEOperation(notEClass, NOT___INPUT_SIZE_NOT__DIAGNOSTICCHAIN_MAP);
 
 		equalityEClass = createEClass(EQUALITY);
-		createEOperation(equalityEClass, EQUALITY___INPUT_SIZE_INPUT_OUTPUT_TYPES_EQ__DIAGNOSTICCHAIN_MAP);
 
 		booleanConstantEClass = createEClass(BOOLEAN_CONSTANT);
 		createEAttribute(booleanConstantEClass, BOOLEAN_CONSTANT__VALUE);
-		createEOperation(booleanConstantEClass,
-				BOOLEAN_CONSTANT___INPUT_SIZE_OUTPUT_TYPES_BOOL_CONST__DIAGNOSTICCHAIN_MAP);
 
 		integerOperatorEClass = createEClass(INTEGER_OPERATOR);
-		createEOperation(integerOperatorEClass, INTEGER_OPERATOR___INPUT_SIZE_TYPES_INT_OP__DIAGNOSTICCHAIN_MAP);
 
 		additionEClass = createEClass(ADDITION);
-		createEOperation(additionEClass, ADDITION___OUTPUT_TYPES_ADD__DIAGNOSTICCHAIN_MAP);
 
 		substractionEClass = createEClass(SUBSTRACTION);
-		createEOperation(substractionEClass, SUBSTRACTION___OUTPUT_TYPES_SUBSTR__DIAGNOSTICCHAIN_MAP);
 
 		greaterThanEClass = createEClass(GREATER_THAN);
-		createEOperation(greaterThanEClass, GREATER_THAN___OUTPUT_TYPES_GREAT__DIAGNOSTICCHAIN_MAP);
 
 		lessThanEClass = createEClass(LESS_THAN);
-		createEOperation(lessThanEClass, LESS_THAN___OUTPUT_TYPES_LESS__DIAGNOSTICCHAIN_MAP);
 
 		integerConstantEClass = createEClass(INTEGER_CONSTANT);
 		createEAttribute(integerConstantEClass, INTEGER_CONSTANT__VALUE);
-		createEOperation(integerConstantEClass,
-				INTEGER_CONSTANT___INPUT_SIZE_OUTPUT_TYPES_INT_CONTS__DIAGNOSTICCHAIN_MAP);
 
 		risingEdgeEClass = createEClass(RISING_EDGE);
-		createEOperation(risingEdgeEClass, RISING_EDGE___INPUT_SIZE_RISING_EDGE__DIAGNOSTICCHAIN_MAP);
 
 		fallingEdgeEClass = createEClass(FALLING_EDGE);
-		createEOperation(fallingEdgeEClass, FALLING_EDGE___INPUT_SIZE_FALLING_EDGE__DIAGNOSTICCHAIN_MAP);
 
 		// Create enums
 		variableDeclarationTypeEEnum = createEEnum(VARIABLE_DECLARATION_TYPE);
@@ -954,16 +780,6 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 				null, 1, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getVariable__SortVariable__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
-				"SortVariable", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
-		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(variableDeclarationEClass, VariableDeclaration.class, "VariableDeclaration", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVariableDeclaration_Sort(), this.getSort(), null, "sort", null, 1, 1,
@@ -978,16 +794,9 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 		initEReference(getVariableDeclaration_Step(), theGrafcetPackage.getInitializableType(), null, "step", null, 0,
 				1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		op = initEOperation(getVariableDeclaration__StepVarDeclSetStep__DiagnosticChain_Map(),
-				ecorePackage.getEBoolean(), "StepVarDeclSetStep", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEAttribute(getVariableDeclaration_Value(), ecorePackage.getEString(), "value", "", 0, 1,
+				VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operatorEClass, Operator.class, "Operator", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOperator_Subterm(), this.getTerm(), null, "subterm", null, 0, -1, Operator.class,
@@ -999,26 +808,6 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 		initEReference(getOperator_Input(), this.getSort(), null, "input", null, 0, -1, Operator.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-
-		op = initEOperation(getOperator__OperatorSort__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
-				"OperatorSort", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = initEOperation(getOperator__OperatorInputType__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
-				"OperatorInputType", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(constantEClass, Constant.class, "Constant", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1034,64 +823,14 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 		initEClass(booleanOperatorEClass, BooleanOperator.class, "BooleanOperator", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getBooleanOperator__InputOutputTypesBoolOp__DiagnosticChain_Map(),
-				ecorePackage.getEBoolean(), "InputOutputTypesBoolOp", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(andEClass, And.class, "And", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getAnd__InputSizeAnd__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "InputSizeAnd", 0,
-				1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(orEClass, Or.class, "Or", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getOr__InputSizeOr__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "InputSizeOr", 0, 1,
-				IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(notEClass, Not.class, "Not", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getNot__InputSizeNot__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "InputSizeNot", 0,
-				1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(equalityEClass, Equality.class, "Equality", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getEquality__InputSizeInputOutputTypesEq__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
-				"InputSizeInputOutputTypesEq", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(booleanConstantEClass, BooleanConstant.class, "BooleanConstant", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1099,121 +838,31 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 				BooleanConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getBooleanConstant__InputSizeOutputTypesBoolConst__DiagnosticChain_Map(),
-				ecorePackage.getEBoolean(), "InputSizeOutputTypesBoolConst", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(integerOperatorEClass, IntegerOperator.class, "IntegerOperator", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getIntegerOperator__InputSizeTypesIntOp__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
-				"InputSizeTypesIntOp", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(additionEClass, Addition.class, "Addition", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getAddition__OutputTypesAdd__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
-				"OutputTypesAdd", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(substractionEClass, Substraction.class, "Substraction", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getSubstraction__OutputTypesSubstr__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
-				"OutputTypesSubstr", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(greaterThanEClass, GreaterThan.class, "GreaterThan", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getGreaterThan__OutputTypesGreat__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
-				"OutputTypesGreat", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(lessThanEClass, LessThan.class, "LessThan", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getLessThan__OutputTypesLess__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
-				"OutputTypesLess", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(integerConstantEClass, IntegerConstant.class, "IntegerConstant", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIntegerConstant_Value(), ecorePackage.getEInt(), "value", null, 1, 1, IntegerConstant.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getIntegerConstant__InputSizeOutputTypesIntConts__DiagnosticChain_Map(),
-				ecorePackage.getEBoolean(), "InputSizeOutputTypesIntConts", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(risingEdgeEClass, RisingEdge.class, "RisingEdge", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getRisingEdge__InputSizeRisingEdge__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
-				"InputSizeRisingEdge", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(fallingEdgeEClass, FallingEdge.class, "FallingEdge", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getFallingEdge__InputSizeFallingEdge__DiagnosticChain_Map(), ecorePackage.getEBoolean(),
-				"InputSizeFallingEdge", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(variableDeclarationTypeEEnum, VariableDeclarationType.class, "VariableDeclarationType");
@@ -1226,10 +875,24 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 		createResource(eNS_URI);
 
 		// Create annotations
+		// http://www.eclipse.org/OCL/Import
+		createImportAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
 		createPivotAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/OCL/Import</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createImportAnnotations() {
+		String source = "http://www.eclipse.org/OCL/Import";
+		addAnnotation(this, source,
+				new String[] { "ecore", "http://www.eclipse.org/emf/2002/Ecore", "grafcet", "grafcet.ecore#/" });
 	}
 
 	/**
@@ -1240,10 +903,13 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 	 */
 	protected void createEcoreAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore";
-		addAnnotation(this, source, new String[] {});
+		addAnnotation(this, source,
+				new String[] { "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+						"settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "validationDelegates",
+						"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot" });
 		addAnnotation(variableEClass, source, new String[] { "constraints", "SortVariable" });
 		addAnnotation(variableDeclarationEClass, source, new String[] { "constraints", "StepVarDeclSetStep" });
-		addAnnotation(operatorEClass, source, new String[] { "constraints", "OperatorInputType" });
+		addAnnotation(operatorEClass, source, new String[] { "constraints", "OperatorSort OperatorInputType" });
 		addAnnotation(booleanOperatorEClass, source, new String[] { "constraints", "InputOutputTypesBoolOp" });
 		addAnnotation(andEClass, source, new String[] { "constraints", "InputSizeAnd" });
 		addAnnotation(orEClass, source, new String[] { "constraints", "InputSizeOr" });
@@ -1268,42 +934,33 @@ public class TermsPackageImpl extends EPackageImpl implements TermsPackage {
 	 */
 	protected void createPivotAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
-		addAnnotation(getVariable__SortVariable__DiagnosticChain_Map(), source,
-				new String[] { "body", "self.sort = self.variableDeclaration.sort" });
-		addAnnotation(getVariableDeclaration__StepVarDeclSetStep__DiagnosticChain_Map(), source, new String[] { "body",
+		addAnnotation(variableEClass, source,
+				new String[] { "SortVariable", "self.sort = self.variableDeclaration.sort" });
+		addAnnotation(variableDeclarationEClass, source, new String[] { "StepVarDeclSetStep",
 				"self.variableDeclarationType = VariableDeclarationType::step implies step <> null and self.sort.oclIsKindOf(Bool)" });
-		addAnnotation(getOperator__OperatorSort__DiagnosticChain_Map(), source,
-				new String[] { "body", "self.sort = self.output" });
-		addAnnotation(getOperator__OperatorInputType__DiagnosticChain_Map(), source,
-				new String[] { "body", "self.subterm->collect(subterm|subterm.sort) = self.input->asSequence()" });
-		addAnnotation(getBooleanOperator__InputOutputTypesBoolOp__DiagnosticChain_Map(), source, new String[] { "body",
+		addAnnotation(operatorEClass, source, new String[] { "OperatorSort", "self.sort = self.output",
+				"OperatorInputType", "self.subterm->collect(subterm|subterm.sort) = self.input->asSequence()" });
+		addAnnotation(booleanOperatorEClass, source, new String[] { "InputOutputTypesBoolOp",
 				"self.output.oclIsKindOf(Bool) and  self.input->forAll(c | c.oclIsKindOf(Bool))" });
-		addAnnotation(getAnd__InputSizeAnd__DiagnosticChain_Map(), source,
-				new String[] { "body", "self.input-> size() = 2" });
-		addAnnotation(getOr__InputSizeOr__DiagnosticChain_Map(), source,
-				new String[] { "body", "self.input-> size() = 2" });
-		addAnnotation(getNot__InputSizeNot__DiagnosticChain_Map(), source,
-				new String[] { "body", "self.input-> size() = 1" });
-		addAnnotation(getEquality__InputSizeInputOutputTypesEq__DiagnosticChain_Map(), source, new String[] { "body",
+		addAnnotation(andEClass, source, new String[] { "InputSizeAnd", "self.input-> size() = 2" });
+		addAnnotation(orEClass, source, new String[] { "InputSizeOr", "self.input-> size() = 2" });
+		addAnnotation(notEClass, source, new String[] { "InputSizeNot", "self.input-> size() = 1" });
+		addAnnotation(equalityEClass, source, new String[] { "InputSizeInputOutputTypesEq",
 				"self.input-> size() >= 2 and self.output.oclIsKindOf(Bool) and self.input->forAll(c,d|c.oclIsTypeOf(d.oclType()) or d.oclIsTypeOf(c.oclType()))" });
-		addAnnotation(getBooleanConstant__InputSizeOutputTypesBoolConst__DiagnosticChain_Map(), source,
-				new String[] { "body", "self.input-> size() = 0 and self.output.oclIsTypeOf(Bool)" });
-		addAnnotation(getIntegerOperator__InputSizeTypesIntOp__DiagnosticChain_Map(), source, new String[] { "body",
+		addAnnotation(booleanConstantEClass, source, new String[] { "InputSizeOutputTypesBoolConst",
+				"self.input-> size() = 0 and self.output.oclIsTypeOf(Bool)" });
+		addAnnotation(integerOperatorEClass, source, new String[] { "InputSizeTypesIntOp",
 				"self.input-> size() = 2 and self.input->forAll(c | c.oclIsKindOf(_\'Integer\'))" });
-		addAnnotation(getAddition__OutputTypesAdd__DiagnosticChain_Map(), source,
-				new String[] { "body", "self.output.oclIsKindOf(_\'Integer\')" });
-		addAnnotation(getSubstraction__OutputTypesSubstr__DiagnosticChain_Map(), source,
-				new String[] { "body", "self.output.oclIsKindOf(_\'Integer\')" });
-		addAnnotation(getGreaterThan__OutputTypesGreat__DiagnosticChain_Map(), source,
-				new String[] { "body", "self.output.oclIsKindOf(Bool)" });
-		addAnnotation(getLessThan__OutputTypesLess__DiagnosticChain_Map(), source,
-				new String[] { "body", "self.output.oclIsKindOf(Bool)" });
-		addAnnotation(getIntegerConstant__InputSizeOutputTypesIntConts__DiagnosticChain_Map(), source,
-				new String[] { "body", "self.input->size() = 0 and self.output.oclIsTypeOf(_\'Integer\')" });
-		addAnnotation(getRisingEdge__InputSizeRisingEdge__DiagnosticChain_Map(), source,
-				new String[] { "body", "self.input->size() = 1" });
-		addAnnotation(getFallingEdge__InputSizeFallingEdge__DiagnosticChain_Map(), source,
-				new String[] { "body", "self.input->size() = 1" });
+		addAnnotation(additionEClass, source,
+				new String[] { "OutputTypesAdd", "self.output.oclIsKindOf(_\'Integer\')" });
+		addAnnotation(substractionEClass, source,
+				new String[] { "OutputTypesSubstr", "self.output.oclIsKindOf(_\'Integer\')" });
+		addAnnotation(greaterThanEClass, source, new String[] { "OutputTypesGreat", "self.output.oclIsKindOf(Bool)" });
+		addAnnotation(lessThanEClass, source, new String[] { "OutputTypesLess", "self.output.oclIsKindOf(Bool)" });
+		addAnnotation(integerConstantEClass, source, new String[] { "InputSizeOutputTypesIntConts",
+				"self.input->size() = 0 and self.output.oclIsTypeOf(_\'Integer\')" });
+		addAnnotation(risingEdgeEClass, source, new String[] { "InputSizeRisingEdge", "self.input->size() = 1" });
+		addAnnotation(fallingEdgeEClass, source, new String[] { "InputSizeFallingEdge", "self.input->size() = 1" });
 	}
 
 } //TermsPackageImpl

@@ -2,10 +2,6 @@
  */
 package de.hsu.grafcet;
 
-import java.util.Map;
-
-import org.eclipse.emf.common.util.DiagnosticChain;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Continuous Action</b></em>'.
@@ -19,7 +15,8 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * </ul>
  *
  * @see de.hsu.grafcet.GrafcetPackage#getContinuousAction()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ContinuousActionVarType'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ContinuousActionVarType ContinuousActionCondType'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot ContinuousActionVarType='self.variable.variableDeclaration.sort.oclIsTypeOf(terms::Bool)' ContinuousActionCondType='\n\t\t\tif self.continuousActionType = grafcet::ContinuousActionType::assignationCondition then\n\t\t\tif self.term.oclIsTypeOf(terms::Variable) then true else\n\t\t\t\tself.term.oclAsType(terms::Operator)-&gt;closure(term: terms::Term| term-&gt;selectByKind(terms::Operator).subterm)\n\t\t\t\t\t-&gt;select(operator|operator.oclIsTypeOf(terms::RisingEdge))-&gt;size()\n\t\t\t\t+ self.term.oclAsType(terms::Operator)-&gt;closure(term: terms::Term| term-&gt;selectByKind(terms::Operator).subterm)\n\t\t\t\t\t-&gt;select(operator|operator.oclIsTypeOf(terms::FallingEdge))-&gt;size() = 0\n\t\t\tendif\n\t\t\telse true endif'"
  * @generated
  */
 public interface ContinuousAction extends Action, TimeCondition {
@@ -48,21 +45,5 @@ public interface ContinuousAction extends Action, TimeCondition {
 	 * @generated
 	 */
 	void setContinuousActionType(ContinuousActionType value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='\n\t\t\tif self.continuousActionType = grafcet::ContinuousActionType::assignationCondition then\n\t\t\tif self.term.oclIsTypeOf(terms::Variable) then true else\n\t\t\t\tself.term.oclAsType(terms::Operator)-&gt;closure(term: terms::Term| term-&gt;selectByKind(terms::Operator).subterm)\n\t\t\t\t\t-&gt;select(operator|operator.oclIsTypeOf(terms::RisingEdge))-&gt;size()\n\t\t\t\t+ self.term.oclAsType(terms::Operator)-&gt;closure(term: terms::Term| term-&gt;selectByKind(terms::Operator).subterm)\n\t\t\t\t\t-&gt;select(operator|operator.oclIsTypeOf(terms::FallingEdge))-&gt;size() = 0\n\t\t\tendif\n\t\t\telse true endif'"
-	 * @generated
-	 */
-	boolean ContinuousActionCondType(DiagnosticChain diagnostics, Map<Object, Object> context);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.variable.variableDeclaration.sort.oclIsTypeOf(terms::Bool)'"
-	 * @generated
-	 */
-	boolean ContinuousActionVarType(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // ContinuousAction

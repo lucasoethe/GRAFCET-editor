@@ -4,10 +4,6 @@ package terms;
 
 import de.hsu.grafcet.InitializableType;
 
-import java.util.Map;
-
-import org.eclipse.emf.common.util.DiagnosticChain;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -23,10 +19,12 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link terms.VariableDeclaration#getName <em>Name</em>}</li>
  *   <li>{@link terms.VariableDeclaration#getVariableDeclarationType <em>Variable Declaration Type</em>}</li>
  *   <li>{@link terms.VariableDeclaration#getStep <em>Step</em>}</li>
+ *   <li>{@link terms.VariableDeclaration#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see terms.TermsPackage#getVariableDeclaration()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='StepVarDeclSetStep'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot StepVarDeclSetStep='self.variableDeclarationType = VariableDeclarationType::step implies step &lt;&gt; null and self.sort.oclIsKindOf(Bool)'"
  * @generated
  */
 public interface VariableDeclaration extends EObject {
@@ -122,11 +120,26 @@ public interface VariableDeclaration extends EObject {
 	void setStep(InitializableType value);
 
 	/**
+	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot body='self.variableDeclarationType = VariableDeclarationType::step implies step &lt;&gt; null and self.sort.oclIsKindOf(Bool)'"
+	 * @return the value of the '<em>Value</em>' attribute.
+	 * @see #setValue(String)
+	 * @see terms.TermsPackage#getVariableDeclaration_Value()
+	 * @model default=""
 	 * @generated
 	 */
-	boolean StepVarDeclSetStep(DiagnosticChain diagnostics, Map<Object, Object> context);
+	String getValue();
+
+	/**
+	 * Sets the value of the '{@link terms.VariableDeclaration#getValue <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Value</em>' attribute.
+	 * @see #getValue()
+	 * @generated
+	 */
+	void setValue(String value);
 
 } // VariableDeclaration

@@ -579,6 +579,29 @@ public class GrafcetItemProviderAdapterFactory extends GrafcetAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.hsu.grafcet.HighlightableType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HighlightableTypeItemProvider highlightableTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.hsu.grafcet.HighlightableType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHighlightableTypeAdapter() {
+		if (highlightableTypeItemProvider == null) {
+			highlightableTypeItemProvider = new HighlightableTypeItemProvider(this);
+		}
+
+		return highlightableTypeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -721,6 +744,8 @@ public class GrafcetItemProviderAdapterFactory extends GrafcetAdapterFactory
 			timeConditionItemProvider.dispose();
 		if (conditionItemProvider != null)
 			conditionItemProvider.dispose();
+		if (highlightableTypeItemProvider != null)
+			highlightableTypeItemProvider.dispose();
 	}
 
 }
